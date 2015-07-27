@@ -7,6 +7,7 @@ import os
 import re
 import subprocess
 import threading
+import time
 
 python_exe_name = "python"
 unittest_launch_parameters = "-m"
@@ -58,9 +59,15 @@ if __name__ == '__main__':
         # get name of module
         search_results = re.search(re.escape(os.sep) + file_name_filter + "$", full_file_name)
         threads.append(threading.Thread(target=run_test_module, args=(search_results.group(1),)))
-
+    start_time = time.time()
+    
     # launching list of threads
     for thread_object in threads:
         thread_object.start()
-        # join the main thread
+
+    # join the main thread
+    for thread_object in threads:
         thread_object.join()
+        
+    finish_time = time.time()
+    print "Launching time:", (finish_time - start_time), "seconds"

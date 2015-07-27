@@ -7,15 +7,14 @@ import unittest
 import test_base
 import time
 
-class test_0(test_base.BaseTest):
+class test_4(test_base.BaseTest):
     '''
-    This class is a wrapper for test class with id 0
+    This class is a wrapper for test class with id 4
     '''
-    def test_0_execution(self):
+    def test_4_execution(self):
         print self.getThreadInfo(), ">> Execution of", self.testName() , "has been started"
-        time.sleep(0)
+        time.sleep(4)
         print self.getThreadInfo(), ">> Execution of", self.testName() , "has been completed"
-
 
 if __name__ == '__main__':
     unittest.main()
