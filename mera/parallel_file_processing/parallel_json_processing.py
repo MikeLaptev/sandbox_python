@@ -9,6 +9,7 @@ import re
 import threading
 import Queue
 import json_file_generator
+import hashlib
 
 class ParallelJSONProcessing:
     
@@ -80,7 +81,7 @@ class ProcessJSONFile(threading.Thread):
         self.results_file_name = file_with_results_name
         self.lock = lock 
     
-    def calculate_checksum(self, file_name):
+    def calculate_seeming_checksum(self, file_name):
         """
         This function calculates seeming checksum for the file from parameter
         @param file_name: name of the json file to calculate seeming checksum 
@@ -89,6 +90,13 @@ class ProcessJSONFile(threading.Thread):
             
         return sum(data_from_file.values())
     
+    def calculate_md5(self, file_name):
+        with open(file_name, 'r') as f:
+            m = hashlib.md5()
+            for line in f:
+                m.update(line)
+        return m.hexdigest();
+    
     def run(self):
         while not self.file_queue.empty():
             # acquire the lock
@@ -96,10 +104,12 @@ class ProcessJSONFile(threading.Thread):
                 # get next file for processing
                 next_file = self.file_queue.get()
                 # calculate the checksum for the file
-                checksum = self.calculate_checksum(next_file)
+                checksum = self.calculate_seeming_checksum(next_file)
+                # calculate md5 for the file
+                md5_value = self.calculate_md5(next_file)
                 # update the file
                 with open(self.results_file_name, 'a+') as f:
-                    f.write("{} >> {} >> {}\n".format(threading.current_thread().ident, next_file, checksum))
+                    f.write("{} >> {} >> {} >> {}\n".format(threading.current_thread().ident, next_file, checksum, md5_value))
 
 
 def clean_up(dir_with_tests = ".", postfix = ".json"):

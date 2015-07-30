@@ -23,10 +23,14 @@ class MyOwnJSONProcessing:
     max_value = 100
     
     @classmethod
-    def generate_set_of_files_with_json_obj(cls, amount_of_files):
+    def generate_set_of_files_with_json_obj(cls, amount_of_files, is_data_complicated = False):
         for dummy_i in xrange(amount_of_files):
-            #print "Generating of file #{}".format(dummy_i)
-            cls.generate_json_file_with_data(data = cls.generate_data_for_json_obj())
+            if not is_data_complicated:
+                # we will generate simple data for json file
+                cls.generate_json_file_with_data(data = cls.generate_data_for_json_obj())
+            else:
+                # lets try to generate more complicated data for json file
+                cls.generate_json_file_with_data(data = cls.generate_complicated_data_for_json_obj())
     
     @classmethod
     def generate_data_for_json_obj(cls):
@@ -39,7 +43,11 @@ class MyOwnJSONProcessing:
                 json_data[new_key] = new_value
                 
         return json_data
-    
+
+    @classmethod
+    def generate_complicated_data_for_json_obj(cls):
+        raise NotImplementedError
+
     @staticmethod
     def generate_json_file_with_data(file_name_template = "data_<timestamp>.json", data = {}):
         """
@@ -56,7 +64,7 @@ class MyOwnJSONProcessing:
             json.dump(data, f, indent = 4) 
         print "File {} has been generated".format(file_name)
         return file_name
-            
+
     @staticmethod
     def load_data_from_json_file(file_name):
         data = {}
