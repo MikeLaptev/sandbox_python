@@ -90,7 +90,6 @@ class ProcessJSONFile(threading.Thread):
         return sum(data_from_file.values())
     
     def run(self):
-        
         while not self.file_queue.empty():
             # acquire the lock
             with self.lock:
@@ -104,6 +103,11 @@ class ProcessJSONFile(threading.Thread):
 
 
 def clean_up(dir_with_tests = ".", postfix = ".json"):
+    """
+    This function removes all files in folder from parameters (not from subfolders) with required postfix
+    @param dir_with_tests: directory when selected files should be removed
+    @param postfix: postfix for files that should be removed  
+    """
     for name in os.listdir(dir_with_tests):
         if name.endswith(postfix): 
             file_or_dir_name = os.path.join(dir_with_tests, name)

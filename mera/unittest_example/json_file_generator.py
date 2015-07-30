@@ -8,7 +8,8 @@ import random
 import string
 import time
 import os
-import threading
+
+__version__ = 2.0
 
 class MyOwnJSONProcessing:
     
@@ -21,24 +22,26 @@ class MyOwnJSONProcessing:
     # variable for max value in dictionary (for json)
     max_value = 100
     
-    def generate_set_of_files_with_json_obj(self, amount_of_files):
+    @classmethod
+    def generate_set_of_files_with_json_obj(cls, amount_of_files):
         for dummy_i in xrange(amount_of_files):
             #print "Generating of file #{}".format(dummy_i)
-            self.generate_json_file_with_data(data = self.generate_data_for_json_obj())
+            cls.generate_json_file_with_data(data = cls.generate_data_for_json_obj())
     
-    def generate_data_for_json_obj(self):
+    @classmethod
+    def generate_data_for_json_obj(cls):
         json_data = {}
         # generating random key
-        for dummy_i in range(random.randrange(self.min_len_of_json_dict, self.max_len_of_json_dict)):
-            new_key = self.randomword(random.randrange(self.min_len_of_key, self.max_len_of_key))
-            new_value = random.randrange(self.max_value)
+        for dummy_i in range(random.randrange(cls.min_len_of_json_dict, cls.max_len_of_json_dict)):
+            new_key = cls.randomword(random.randrange(cls.min_len_of_key, cls.max_len_of_key))
+            new_value = random.randrange(cls.max_value)
             if not json_data.has_key(new_key):
                 json_data[new_key] = new_value
                 
-        
         return json_data
     
-    def generate_json_file_with_data(self, file_name_template = "data_<timestamp>.json", data = {}):
+    @staticmethod
+    def generate_json_file_with_data(file_name_template = "data_<timestamp>.json", data = {}):
         """
         By default this function generates json file with name that contains time-stamp 
         when it has been generated
@@ -51,17 +54,32 @@ class MyOwnJSONProcessing:
         # process the file
         with open(file_name, 'w') as f:
             json.dump(data, f, indent = 4) 
+        print "File {} has been generated".format(file_name)
+        return file_name
             
-    def load_data_from_json_file(self, file_name):
+    @staticmethod
+    def load_data_from_json_file(file_name):
         data = {}
         with open(file_name, 'r') as f:
             data = json.load(f)
             
         return data
     
-    def randomword(self, length):
-        return ''.join(random.choice(string.lowercase) for dummy_i in range(length))
+    @staticmethod
+    def randomword(length):
+        return ''.join(random.choice(string.lowercase + string.digits) for dummy_i in range(length))
 
-if __name__ == '__main__':
-    json_generator = MyOwnJSONProcessing()
-    json_generator.generate_set_of_files_with_json_obj(5)
+    @staticmethod
+    def clean_up(dir_with_tests = ".", postfix = ".json"):
+        """
+        This function removes all files in folder from parameters (not from subfolders) with required postfix
+        @param dir_with_tests: directory when selected files should be removed
+        @param postfix: postfix for files that should be removed  
+        """
+        for name in os.listdir(dir_with_tests):
+            if name.endswith(postfix): 
+                file_or_dir_name = os.path.join(dir_with_tests, name)
+                # we should process only files
+                if os.path.isfile(file_or_dir_name):
+                    os.remove(file_or_dir_name)
+                    print "File {} has been removed...".format(file_or_dir_name)
