@@ -22,6 +22,9 @@ class GenerateAndLoadJSONTestInitial(unittest.TestCase):
         for exp_key, exp_value in expected_data.items():
             self.assertTrue(actual_data.has_key(exp_key), "Expected key '{}' has not been found in loaded json".format(exp_key))
             self.assertEquals(exp_value, actual_data.get(exp_key), "Dictionaries have different values '{}' for first and '{}' for second for the same key".format(exp_value, actual_data.get(exp_key)))
+        for act_key, act_value in actual_data.items():
+            self.assertTrue(expected_data.has_key(act_key), "Loaded key '{}' has not been found in dumped json".format(act_key))
+            self.assertEquals(act_value, expected_data.get(act_key), "Dictionaries have different values '{}' for first and '{}' for second for the same key".format(act_value, expected_data.get(act_key)))
         # Second execution of the test can be failed because if we do not delete created file
         os.remove(file_name)
 

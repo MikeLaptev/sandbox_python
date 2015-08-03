@@ -95,7 +95,7 @@ class ProcessJSONFile(threading.Thread):
             m = hashlib.md5()
             for line in f:
                 m.update(line)
-        return m.hexdigest();
+        return m.hexdigest()
     
     def run(self):
         while not self.file_queue.empty():

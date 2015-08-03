@@ -7,6 +7,9 @@
 <path>/${PROJECT_DIR_NAME}/parallel_file_processing</path>
 <path>/${PROJECT_DIR_NAME}/unittest_example</path>
 <path>/${PROJECT_DIR_NAME}/challenges</path>
+<path>/${PROJECT_DIR_NAME}/modules_practice</path>
+<path>/${PROJECT_DIR_NAME}/practice_with_function</path>
+<path>/${PROJECT_DIR_NAME}/practice_with_modules</path>
 </pydev_pathproperty>
 <pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">python 2.7</pydev_property>
 <pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">python27</pydev_property>

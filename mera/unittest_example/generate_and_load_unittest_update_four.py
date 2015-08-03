@@ -36,6 +36,8 @@ class GenerateAndLoadJSONTestUpdateFour(unittest.TestCase):
         actual_data = json_processing.load_data_from_json_file(self.original_name)
         for exp_key in self.expected_data.keys():
             self.assertTrue(actual_data.has_key(exp_key), "Expected key '{}' has not been found in loaded json".format(exp_key))
+        for act_key in actual_data.keys():
+            self.assertTrue(self.expected_data.has_key(act_key), "Loaded key '{}' has not been found in dumped json".format(act_key))
     
     # General version of skip
     @skip("old functionality")
@@ -58,6 +60,8 @@ class GenerateAndLoadJSONTestUpdateFour(unittest.TestCase):
         actual_data = json_processing.load_data_from_json_file(self.original_name)
         for exp_key, exp_value in self.expected_data.items():
             self.assertEquals(exp_value, actual_data.get(exp_key), "Dictionaries have different values '{}' for first and '{}' for second for the same key".format(exp_value, actual_data.get(exp_key)))
+        for act_key, act_value in actual_data.items():
+            self.assertEquals(act_value, self.expected_data.get(act_key), "Dictionaries have different values '{}' for first and '{}' for second for the same key".format(act_value, self.expected_data.get(act_key)))
 
     def testGenerateAndLoadJSONForInvalidFile(self):
         """
