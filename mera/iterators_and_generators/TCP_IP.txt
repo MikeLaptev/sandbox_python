@@ -26,3 +26,5 @@ While IP handles actual delivery of the data, TCP keeps track of the individual 
 For example, when an HTML file is sent from a web server, the TCP software layer of that server divides the sequence of octets of the file into segments and forwards them individually to the IP software layer (Internet Layer). 
 The Internet Layer encapsulates each TCP segment into an IP packet by adding a header that includes (among other data) the destination IP address. 
 When the client program on the destination computer receives them, the TCP layer (Transport Layer) reassembles the individual segments and ensures they are correctly ordered and error free as it streams them to an application.
+
+[Information about TCP protocol from Wikipedia]
