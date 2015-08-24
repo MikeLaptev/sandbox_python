@@ -90,11 +90,11 @@ def randomword(length):
         return ''.join(random.choice(string.lowercase + string.digits) for dummy_i in range(length))
     
 # This function generates random dictionary with required nesting
-def generate_deep_dict(amount_of_levels = 1, max_amount_of_leaves = 5, min_len_of_obj_in_dict = 2, max_len_of_obj_in_dict = 5, min_len_of_key = 1, max_len_of_key = 10):
+def generate_deep_dict(amount_of_levels = 1, min_amount_of_leaves = 1, max_amount_of_leaves = 5, min_len_of_obj_in_dict = 2, max_len_of_obj_in_dict = 5, min_len_of_key = 1, max_len_of_key = 10):
     result_dict = dict()
     
     if amount_of_levels == 1:
-        for dummy_i in range(random.randrange(1, max_amount_of_leaves)):
+        for dummy_i in range(random.randrange(min_amount_of_leaves, max_amount_of_leaves)):
             key_to_add = randomword(random.randrange(min_len_of_key, max_len_of_key))
             # randomly choose type of object that will be added into data object
             # TODO: change to enum for Python 3.x
@@ -111,7 +111,7 @@ def generate_deep_dict(amount_of_levels = 1, max_amount_of_leaves = 5, min_len_o
             # adding 
             result_dict[key_to_add] = value_to_add
     else:
-        for dummy_i in range(random.randrange(1, max_amount_of_leaves)):
+        for dummy_i in range(random.randrange(min_amount_of_leaves, max_amount_of_leaves)):
             key_to_add = randomword(random.randrange(min_len_of_key, max_len_of_key))
             # randomly choose type of object that will be added into data object
             # TODO: change to enum for Python 3.x
@@ -127,7 +127,7 @@ def generate_deep_dict(amount_of_levels = 1, max_amount_of_leaves = 5, min_len_o
                 value_to_add = randomword(random.randrange(min_len_of_key, max_len_of_key))
             elif object_type == 0:
                 # another layer of nesting
-                value_to_add = generate_deep_dict(amount_of_levels - 1, max_amount_of_leaves, min_len_of_obj_in_dict, max_len_of_obj_in_dict, min_len_of_key, max_len_of_key)
+                value_to_add = generate_deep_dict(amount_of_levels - 1, min_amount_of_leaves, max_amount_of_leaves, min_len_of_obj_in_dict, max_len_of_obj_in_dict, min_len_of_key, max_len_of_key)
             # adding 
             result_dict[key_to_add] = value_to_add 
     
