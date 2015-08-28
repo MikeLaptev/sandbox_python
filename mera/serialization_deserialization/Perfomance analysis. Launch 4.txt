@@ -1,0 +1,175 @@
+Iteration #1
+Initialization started...
+Big dictionary with single deepness has been generated...
+{'4vl38': ['74r0gqznx7e', 'dhy4n01plxs6uw', '4t3kwypt', '16pq01pav3t'], 'ocghoon7g': ['9x8m3tj2', '9kf9hooh', '79y4rdhx5', 'lq5e5ais97k7t4']}
+Big array has been generated...
+['w4s2ckyc', 'jouhn6jjtc4', 'dq0x11e62', 'ik5vpj3pteh', 'lw65lhjy9bd0', '6sgkd4w', '9nhzd12wc0', 'no1h0bdra7ia', 'qm0o6oxkq7unuz', 'o906tladof', '9iokups', 'ugl5y8uh797zxn', 'sd2xcu6ervd5', '6slipwmte1x', 'sd9qs118jq', 'hnaum2qf', '8kfmm', 'rnmufp8nlin', 'i9ifg', 'wu7nuek4', 'gbwznwp2kzt', 'nrv0s', 'bfql6uk1ed3ye', 'r2cxtputo', 'fyuy9sch', 'gx1z6xj30o8gh', 'uw2be5yie6z', '64l1ugc', 'fi57rvnhzqf', 'd1sccl3pxj', '7tmeyu5', 'xr6bki', '473kj', 'rij3scdszx', '5cl5f89ltol84', 'hz3zy8arbeaa63']
+Big dictionary with big deepness has been generated...
+{'nf46ec5jh86': {'ljh6p9cp': ['gb8diy1f3', 'b647n4e2ecqe', '9k3l4z'], 'dd5rnrv': {'lj85hhiiq81dxj': 'ez0ngaryf9', 'xq8uvmwov4': {'9l83jiueem10': 'vnmsmjk', 'f27qy5': 'gqk10elemd', 'p5d4rg3g': 'bt5dpcwxw49ag'}, 'w5uh5yb': {'2uij09ybz6': 'll81nz4yk1', '0twc0e': 'y4fc4m6m78cx7', 'yz6dqmfdntw': 'ahxiwi', 'bia5t0s2951lk': '62jzgvh'}, 'nga7yezwkjai3': {'qr3jge': {'6x4o2l': {'m31w6i5ticlmd': 'uzbjepbq8u8yb', 'exbbl7chfmc': '5dsir08u73zo4', '0fa1l4kzu': 'w40wk', 'eil2uxxwg': 'm83e6tu'}, 'fq57tl9a7dn5': ['spz7f5c', 'jon6pgr1pv4hzf', 'v2ca4n0s', 'uvjraqy8t'], 'fn7n7t1c1ejsz': '04khlqrcyv6zu', 'i5am7jipwecc': ['1g9dez8wx', 'ec3qdvkl', 'gkcp2wt2n']}, 'e61cp': {'6nykbpaqx0ci': '9vgx830aq8k', 'r8lj6': '1y2urn57hfe', 'ezz5nujuz489k': 'mlxnowrayjtim5', 'd6ap87cz6bu': 'qq6m8z9'}, '9vhy8n': 'cb6blz'}}, 'iuxf94us7gw': 'avieh618r0n', 'ldnsqm89dx': {'bwgpwnq53j': '2uzjp', 'x8h7lpl4q': 'giv41hpcn2vl', 'd4olvpns': '72qdyllqkq3y', 'zaqr7fw': 'ocdgixm0'}}, '69kx55qsdp8sq': {'z54id1d': {'m7ba46nd93t7v3': 'nz0x9j3rlvr1', '7cxw014o57024': 'wy42qg911', 'rzdjr44ym': 'crypq6on9v'}, 'zk8d5l': {'c4n49tp4y69a2': 'weug4yti1zd', 'd4w0a': 'tblxe6b', '0lae42xagx6n5': 'mb16jjsydz', 'jcrh1p': 'g2d3o'}, 'uj5ac61jl': {'8nh72fkavy': '2308jx3mzcl', '2hin2rvujmu': '327f2sk', 'ka5k1i0hpp': ['kpstui0y5', '0xa481nlkg8', 'g1jf15gw', '1mc7u4'], 'vmw6jyu252jp': ['p79d6r', 'u995q5vzcrr', 'bziy1k', 'nl0hbhkuxchq0']}, 'ukrcd': {'xh37t748': ['k01ktk2h', 'zcc5wolez9ul', '0mv1k'], 'uci4u84h76w': {'8yowch': {'peizbtl4': '3wsf53k13r5k', '3qmbubjzl4xa': 'rcgoz', 'yl1q18erw': 'c6rws7hh82'}, 'mh6kt419d6c18': ['3kaxg', 'v7ckl3rio', 'pyqxk'], '72732u': ['s52dqa', 'biusf', 'gnh3087i', 'jzxtw0lk7']}, 'u03wups8m': 'rycjfgie'}}, '2zgf5s7luvi9': {'uixobma9d9': '121mctccerztw2', '0sdqzyty5d3': 't8dtvdo5i3io1y', '2sj15sa6ktn': '7ewiw3e8nep'}, 'gsh3eyxbp': ['h1zu6qh4', 'dvem3ev', 'yq36ro0vxml', '6spxznki']}
+Initialization completed...
+Serialization (with Strings)
+JSON:
+Big dictionary: 4.11427569384
+Big array: 6.27538984313
+Big dictionary with deepness: 22.0273186991
+YAML
+Big dictionary: 485.094767777
+Big array: 1252.13974354
+Big dictionary with deepness: 5926.71091177
+Pickle
+Big dictionary: 39.9782153119
+Big array: 108.898078712
+Big dictionary with deepness: 473.247813867
+Deserialization (with Strings)
+JSON
+Big dictionary: 5.61313506807
+Big array: 11.5711717518
+Big dictionary with deepness: 54.5629315346
+YAML
+Big dictionary: 849.537108817
+Big array: 2469.32939397
+Big dictionary with deepness: 10013.5699298
+Pickle
+Big dictionary: 37.0155498859
+Big array: 105.677788021
+Big dictionary with deepness: 416.523547386
+Iteration #2
+Initialization started...
+Big dictionary with single deepness has been generated...
+{'z4s801g': ['e5o5t4'], 'rttib901a': 'no36n8zc4'}
+Big array has been generated...
+['urgz2vjg1yflyf', 'k1vdl6entyk67r', '7us9c', 'j43lr6g', '130kscm', 'a6v72p5wd', 'a9n8gw1uz6xv', '9e2ae92', 'lw9y3zg0', '3cm2xu18', 'rlxkdi8nw', 'jianim', 'v8oym68c', '7rg09ukz', '77ehofbpbqp', 'bemrzt', 'n0eyrb', 'zyrf2x', '7y8lhh0eo']
+Big dictionary with big deepness has been generated...
+{'brp2umz8sz': ['lvz6o7v', 'hharazjxnm5', 'olvrccmphrf'], '47r2q': ['j5u960gvvbes1', 'e2riesnec', 'qq1d2g9v3m9h7'], 'd0bhc05kck1': {'dkv0imrd9kf3': {'jio4q5ywsd': 'zx98mh1b', '32t8bghhz46e': '3wf42mmsps5uza', '8ps8n6m5vgw': 'unca8'}, 'ckps6jgr6': ['g9wjxl77w', 'ax4v9o9cdz7l', 'zjp8hj6'], '230wby5': ['8v7ipsg7h0', '9uhsbeuwx', '05lwcl5wy63mcz'], 'ybjxoj': {'c3skgg': 'thjjdajs', '23vjr': 'mls5g90p', 'yc3w8j1jm': '29d6a', 'ep01ge8l1qg': 'o1j0ed5m7q68j'}}}
+Initialization completed...
+Serialization (with Strings)
+JSON:
+Big dictionary: 3.33265824843
+Big array: 4.4528129089
+Big dictionary with deepness: 7.15067875953
+YAML
+Big dictionary: 243.314039601
+Big array: 689.533379903
+Big dictionary with deepness: 1470.48502435
+Pickle
+Big dictionary: 18.3527411978
+Big array: 56.1777097822
+Big dictionary with deepness: 114.18512889
+Deserialization (with Strings)
+JSON
+Big dictionary: 3.74376671779
+Big array: 6.60357230742
+Big dictionary with deepness: 13.753126281
+YAML
+Big dictionary: 366.963267978
+Big array: 1292.4774094
+Big dictionary with deepness: 2516.74185698
+Pickle
+Big dictionary: 18.0261558336
+Big array: 56.3626863537
+Big dictionary with deepness: 102.644030043
+Iteration #3
+Initialization started...
+Big dictionary with single deepness has been generated...
+{'a9rn60b0yi': ['0l7i5nb9fs', 'aau0m9ac', 'g3q32w0r2r'], 'hgp4qldyra9': 'fx2jl', 'y2i9cw4nybafm': {'udfc4': 'efnzezce3hsxee', 'lyick0lyy35oc8': '0qzmlklcm', 'xj4a05c4qtt': 'f6pdy6'}}
+Big array has been generated...
+['oxjdhd', 'o8kkgka70jdr', 'gkrebmvpoq6xa', '1llw25', '846adpgbx45qmt', '7bm5qq74wc0b9', '3z6s9', 'o3ymt8716l7ywl', 'a16b0', '9mlz2c', 'd58dzxap8', 'dt5v9ywa6i9', 'xfmqk', '1wvq8y3zgr2', 'rcj3oq', '1fkfqg7ha', 'f2oi2ea', '7mj665nz0ooxji', 'pa2x9p', '8ej3gmnuhg7', '21gc9af', '80ah7bywhm0fe', 'b6xd2avp6', 'aabrwf5rm', '7ltusy7385', 'ikoehom5hy', 'sfhm7xr', 'mbr08lotkl87r', 'we8tblyw8i', '9gnn5voodtr42z', 'zfmk6g5r2ac8w', 'p7lwcjaxs', '82wsdh8', '07k3wmbnc8', 'ut1efxxy7', '18fyvwr', 'tamwu83vfj', 'bamit51q2', 'slj6qz7xi', '69jhpi', 'pfqsssl48tci', 'c7nwgurv70wp', 'jfqr0kmn', 'wm607', 'svabs16gk', '082nxw', '7nglo1yssaicrm']
+Big dictionary with big deepness has been generated...
+{'cfl5jdgkssxjx': 'nf8egrjm9iw', 'tuka1aja': ['gwbyqpgs', 'xdtrl869u', 'gb4l6hvtw'], 'u4urd9v3wsvea': {'mbkd7cnbo7j': {'264ecd4fz': {'09jzhtk4': '01705asgy', '5brblc5q7aaha': 'k4nrq', 'yuxg51x': '4zdxtc7f', '4nzldc': 'cp1um'}, 'jyrjhs': '10jrssv2n1', 'm8x9r': ['y54juxeb', 'vowce5', 'btk4upw3q5fw']}, 'bhg72ysz7c6ay5': 'k40iq5wxnwf3p', 'r6f3yj8ujnk': {'2v7qs': '6qcvau2', '50akufb01odclb': 'i3xtrlh', '4dz9aja': 'sq6rrseb6rwz9t', 'vgnib01641': 'rc45tzt0yae53'}}, 'hpcpty97fu': {'bdhsbzvdfwvec': 'puh9r4fq3lve', 'jz154ja3xt': 'aadniv', '9b0k0': 'ak94fuwiu2c', '9q0pp5dgz': '8vcqk'}}
+Initialization completed...
+Serialization (with Strings)
+JSON:
+Big dictionary: 4.34822989409
+Big array: 6.9737900871
+Big dictionary with deepness: 7.99469062626
+YAML
+Big dictionary: 598.994491269
+Big array: 1599.83704555
+Big dictionary with deepness: 1808.58311432
+Pickle
+Big dictionary: 44.6491314188
+Big array: 130.315491103
+Big dictionary with deepness: 137.909495849
+Deserialization (with Strings)
+JSON
+Big dictionary: 6.6370272499
+Big array: 13.551361119
+Big dictionary with deepness: 17.3340623909
+YAML
+Big dictionary: 963.042114034
+Big array: 3077.01648427
+Big dictionary with deepness: 3004.67600372
+Pickle
+Big dictionary: 42.6075588177
+Big array: 131.163507399
+Big dictionary with deepness: 126.764359101
+Iteration #4
+Initialization started...
+Big dictionary with single deepness has been generated...
+{'6pc69konmgha': {'ajs28u2tm': '4fjyv4x', '5ulect5o4s3': 'oxuwn', 'upoqsqgwvc7o': 'mqgaaklq', 'iypou': 'ttwexgal6en'}, 'oszyiu42sc8w': {'s4hsbmoeaxblw': 'vxygcoq8cd7b4v', 'e52658czj': 'dvt652uujodb3'}, 'g4ugkeycey3': {'e9pbna': 'uj8d6x91', 'u1t9atjl8to': 's7cv7', 'zx70jc4obulv0j': 'wjll66685', 'lqdowf3wz': '1xj9uxwcsghzet'}, '2wcytbq07f': 'tqzlqn3g9'}
+Big array has been generated...
+['05lptec', 'jo1xhgheq', 'rdu9u8', '42gmkn', '78ertrpsaonfuj', '7lxdnypcy0z', '3gwr7fdqzh', 'sxv0j9gycyka14', 'rjnqt1', 'tkp4l', '5hzwwq2nny', 'uociw423vcu1', '9rgb09dc1', '5vsx861wb1', '7k7gz24mfynq', '1fgy7p', 'qjlxr0oip', 'n1r9qs9', 'zqlcnp26sls5o', 'b2a1rzkr4', 'f043d31u6sl', '6dm1r', '54jrjn', '5692hqyfb2d7', 'j1x5fi4bkfjt', '35o51j', 'pyvgpfw01l', '412zz', '9pshpass', 'ozc5ncl', 'alc9nz', 'b0b2vd9a1161ki', 'cz3jy5j4mlvf', 'w1b3ha', '45nmeu4o9yg', '7pniy8bt1ah2q', 'qaje4y0a014o']
+Big dictionary with big deepness has been generated...
+{'xv7m4x': '8d8td9qfoxbh', 'c6nzen': 'l1zr0', 'wfkf0': {'lhkcfpcl4wsj': {'xfuhkb': '35wgzg413xrwuv', '4oxkmdyzn': '7pjgvdyn8', 'hirflogdebb': 'vo2cnuvo3', 'd4tu41i6dgb9xc': '12kxf1w9useh'}, 'd6ntvvcs': '6xu7muyk', 'b1w51r': ['y4g6k', 'bujkp31p', 'htofb'], '7i0y2j9k': {'mdhvs7wbzu': 'bffyg74qz6a', 'kqx5vu74xne9j': 'vsclyd7efki', 'ifbxeq': 'k6qa5'}}}
+Initialization completed...
+Serialization (with Strings)
+JSON:
+Big dictionary: 5.67212441189
+Big array: 6.08017339944
+Big dictionary with deepness: 6.05415612413
+YAML
+Big dictionary: 1074.90168603
+Big array: 1282.59156798
+Big dictionary with deepness: 1143.2079974
+Pickle
+Big dictionary: 79.072593334
+Big array: 104.065422224
+Big dictionary with deepness: 88.1210672891
+Deserialization (with Strings)
+JSON
+Big dictionary: 11.0808130715
+Big array: 11.0485641939
+Big dictionary with deepness: 11.7925949084
+YAML
+Big dictionary: 1722.21662546
+Big array: 2405.86460009
+Big dictionary with deepness: 1919.37239439
+Pickle
+Big dictionary: 79.0304959394
+Big array: 108.884159846
+Big dictionary with deepness: 82.3369186753
+Iteration #5
+Initialization started...
+Big dictionary with single deepness has been generated...
+{'86gf6sb': 'jwx734', 'xlzy43b2tlgf': 'qhtcrx0cyqzg', 'zunzx1p': ['8k26nvdj6', '4ubr9p8o7', 'v4xyunlz3q0l9'], 'mkidxng': {'c9okpm1q98duq': 'alql4adzgbj', '67bb9pu': 'tma0ulp', 'xrhbp4u': 'keo7onsbihza29'}}
+Big array has been generated...
+['k0trfofq86g', 'iu41wc3lcfkg', '2mrxazi681f2aa', 'fctcpfu0q044j9', 'li57lsy', 'rq35bnml', '37fw1hes', '5l6odewr72az', 'b4548pn', 'ytvye0i1tk5ws', 'ynpzf', 'b5nouy', 'ap5nja6qqwjk', 'eofyr0', 'x7fva8uj3f', 'rk4i3', '5w3bj166ts5', 'uvd9rvdxgjmn', '281b9hu', 'prgpq80pjoa9yk', 'fzx29wukstuhc', 's5t65v', 'o59r369a56', '5pwofjx', 'dfuit8q75j', 'dq0p4']
+Big dictionary with big deepness has been generated...
+{'7l92y3d2bqzz28': 'dfbgoguqtfm', 'vv1ysl3k43lgp': {'kc8hvwz872jt': 'njojv1r', '74fu8udj8': 'pwdtyisj', 'xv0qdau': 'bw648pqn7uoj', 's1omdxcsb7': 'x7nxusty'}, 'm11l56r': 'r3y5fo3lo', '4vrute': {'z8m7rvg1': 'nsy0dmkex2ga', 'bly8q': '8xet7mmo', 'xcirgr': 's8smob'}}
+Initialization completed...
+Serialization (with Strings)
+JSON:
+Big dictionary: 4.55468459753
+Big array: 5.25825373699
+Big dictionary with deepness: 5.05633625692
+YAML
+Big dictionary: 726.812930975
+Big array: 1088.26857937
+Big dictionary with deepness: 894.882261309
+Pickle
+Big dictionary: 51.9234038359
+Big array: 77.3820051526
+Big dictionary with deepness: 65.4534407411
+Deserialization (with Strings)
+JSON
+Big dictionary: 7.46593114518
+Big array: 8.67211673198
+Big dictionary with deepness: 9.41688695725
+YAML
+Big dictionary: 1112.76035659
+Big array: 1718.77064734
+Big dictionary with deepness: 1353.25123878
+Pickle
+Big dictionary: 47.444552212
+Big array: 75.3141723991
+Big dictionary with deepness: 59.7578734217
