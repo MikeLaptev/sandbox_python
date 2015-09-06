@@ -9,6 +9,7 @@ from data_preparation import generate_simple_array
 import json
 import yaml
 import pickle
+import cPickle
 
 import timeit
 import tempfile
@@ -64,6 +65,17 @@ class Performance_Analysis(object):
         with tempfile.NamedTemporaryFile(delete=delete_tmp_file) as f:
             pickle.dump(object_to_serialize, f)
             if not delete_tmp_file: return f.name
+            
+    # Pickle
+    # Serialization into string
+    def serialize_to_str_with_cpickle(self, object_to_serialize):
+        return cPickle.dumps(object_to_serialize)
+    # Serialization into temporary file that will be removed automatically after execution
+    # Last parameter is True by default, since this function is needed only for performance measurements.
+    def serialize_to_file_with_cpickle(self, object_to_serialize, delete_tmp_file = True):
+        with tempfile.NamedTemporaryFile(delete=delete_tmp_file) as f:
+            cPickle.dump(object_to_serialize, f)
+            if not delete_tmp_file: return f.name
 
     # Deerialization
     # JSON
@@ -96,6 +108,16 @@ class Performance_Analysis(object):
             data = pickle.load(f)
         return data
     
+    # Pickle
+    # Deserialization from string
+    def deserialize_str_with_cpickle(self, serialized_string):
+        return cPickle.loads(serialized_string)
+    # Deserialization from file. This function does not delete file after execution.
+    def deserialize_file_with_cpickle(self, file_name):
+        with open(file_name, 'r') as f:
+            data = cPickle.load(f)
+        return data
+    
 if __name__ == "__main__":
     amount_of_iterations_in_timeit = 1
     for iteration_number in range(1, 6):
@@ -119,6 +141,11 @@ if __name__ == "__main__":
         print "Big dictionary: {}".format(timeit.timeit(stmt="perf_object.serialize_to_str_with_pickle(perf_object.big_dict_with_single_deepness)", setup="from __main__ import perf_object"), number=amount_of_iterations_in_timeit)
         print "Big array: {}".format(timeit.timeit(stmt="perf_object.serialize_to_str_with_pickle(perf_object.big_array)", setup="from __main__ import perf_object"), number=amount_of_iterations_in_timeit)
         print "Big dictionary with deepness: {}".format(timeit.timeit(stmt="perf_object.serialize_to_str_with_pickle(perf_object.big_dict_with_big_deepness)", setup="from __main__ import perf_object"), number=amount_of_iterations_in_timeit)
+        # CPickle
+        print "CPickle"
+        print "Big dictionary: {}".format(timeit.timeit(stmt="perf_object.serialize_to_str_with_cpickle(perf_object.big_dict_with_single_deepness)", setup="from __main__ import perf_object"), number=amount_of_iterations_in_timeit)
+        print "Big array: {}".format(timeit.timeit(stmt="perf_object.serialize_to_str_with_cpickle(perf_object.big_array)", setup="from __main__ import perf_object"), number=amount_of_iterations_in_timeit)
+        print "Big dictionary with deepness: {}".format(timeit.timeit(stmt="perf_object.serialize_to_str_with_cpickle(perf_object.big_dict_with_big_deepness)", setup="from __main__ import perf_object"), number=amount_of_iterations_in_timeit)
         
         # Deserialization
         print "Deserialization (with Strings)"
@@ -146,3 +173,11 @@ if __name__ == "__main__":
         print "Big dictionary: {}".format(timeit.timeit(stmt="perf_object.deserialize_str_with_pickle(pickle_big_dictionary)", setup="from __main__ import perf_object, pickle_big_dictionary"), number=amount_of_iterations_in_timeit)
         print "Big array: {}".format(timeit.timeit(stmt="perf_object.deserialize_str_with_pickle(pickle_big_array)", setup="from __main__ import perf_object, pickle_big_array"), number=amount_of_iterations_in_timeit)
         print "Big dictionary with deepness: {}".format(timeit.timeit(stmt="perf_object.deserialize_str_with_pickle(pickle_big_dictionary_with_deepness)", setup="from __main__ import perf_object, pickle_big_dictionary_with_deepness"), number=amount_of_iterations_in_timeit)
+        # CPickle
+        print "CPickle"
+        cpickle_big_dictionary = perf_object.serialize_to_str_with_cpickle(perf_object.big_dict_with_single_deepness)
+        cpickle_big_array = perf_object.serialize_to_str_with_cpickle(perf_object.big_array)
+        cpickle_big_dictionary_with_deepness = perf_object.serialize_to_str_with_cpickle(perf_object.big_dict_with_big_deepness)
+        print "Big dictionary: {}".format(timeit.timeit(stmt="perf_object.deserialize_str_with_cpickle(cpickle_big_dictionary)", setup="from __main__ import perf_object, cpickle_big_dictionary"), number=amount_of_iterations_in_timeit)
+        print "Big array: {}".format(timeit.timeit(stmt="perf_object.deserialize_str_with_cpickle(cpickle_big_array)", setup="from __main__ import perf_object, cpickle_big_array"), number=amount_of_iterations_in_timeit)
+        print "Big dictionary with deepness: {}".format(timeit.timeit(stmt="perf_object.deserialize_str_with_cpickle(cpickle_big_dictionary_with_deepness)", setup="from __main__ import perf_object, cpickle_big_dictionary_with_deepness"), number=amount_of_iterations_in_timeit)
