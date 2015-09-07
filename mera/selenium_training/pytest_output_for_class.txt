@@ -1,0 +1,126 @@
+
+(selenium_training) C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training>py.test.exe -v -s test_pytest_example_class.py
+============================= test session starts =============================
+platform win32 -- Python 2.7.8 -- py-1.4.30 -- pytest-2.7.2 -- c:\users\mikhail\documents\development\virtual_environments\selenium_training\scripts\python.exe
+rootdir: C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training, inifile:
+collected 8 items
+
+test_pytest_example_class.py::TestTitle::test_CheckTitle[Chrome-https://www.yandex.com/-Yandex] Py.test set-up module method
+Py.test set-up method
+Py.test set-up method for url
+Py.test set-up method for title
+PASSEDPy.test tear-down method
+
+test_pytest_example_class.py::TestTitle::test_CheckTitle[Chrome-https://www.yandex.com/-Google] Py.test set-up method
+Start new browser instance
+Py.test set-up method for url
+Py.test set-up method for title
+FAILEDPy.test tear-down method
+
+test_pytest_example_class.py::TestTitle::test_CheckTitle[Chrome-http://www.google.com-Yandex] Py.test set-up method
+Start new browser instance
+Py.test set-up method for url
+Py.test set-up method for title
+FAILEDPy.test tear-down method
+
+test_pytest_example_class.py::TestTitle::test_CheckTitle[Chrome-http://www.google.com-Google] Py.test set-up method
+Start new browser instance
+Py.test set-up method for url
+Py.test set-up method for title
+PASSEDPy.test tear-down method
+
+test_pytest_example_class.py::TestTitle::test_CheckTitle[Firefox-https://www.yandex.com/-Yandex] Py.test tear-down module method
+Py.test set-up module method
+Py.test set-up method
+Py.test set-up method for url
+Py.test set-up method for title
+PASSEDPy.test tear-down method
+
+test_pytest_example_class.py::TestTitle::test_CheckTitle[Firefox-https://www.yandex.com/-Google] Py.test set-up method
+Start new browser instance
+Py.test set-up method for url
+Py.test set-up method for title
+FAILEDPy.test tear-down method
+
+test_pytest_example_class.py::TestTitle::test_CheckTitle[Firefox-http://www.google.com-Yandex] Py.test set-up method
+Start new browser instance
+Py.test set-up method for url
+Py.test set-up method for title
+FAILEDPy.test tear-down method
+
+test_pytest_example_class.py::TestTitle::test_CheckTitle[Firefox-http://www.google.com-Google] Py.test set-up method
+Start new browser instance
+Py.test set-up method for url
+Py.test set-up method for title
+PASSEDPy.test tear-down method
+Py.test tear-down module method
+
+
+================================== FAILURES ===================================
+______ TestTitle.test_CheckTitle[Chrome-https://www.yandex.com/-Google] _______
+
+self = <mera.selenium_training.test_pytest_example_class.TestTitle instance at 0x0000000002E562C8>
+setup_module = None, setup = None, setup_function_url = None
+setup_function_title = None
+
+    def test_CheckTitle(self, setup_module, setup, setup_function_url, setup_function_title):
+        global url, title, page
+        actual_title = page.open_web_page(url)
+>       assert title == actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(title, actual_title)
+E       AssertionError: Title is incorrect. Expected 'Google', Actual 'Yandex'
+E       assert 'Google' == 'Yandex'
+E         - Google
+E         + Yandex
+
+test_pytest_example_class.py:93: AssertionError
+_______ TestTitle.test_CheckTitle[Chrome-http://www.google.com-Yandex] ________
+
+self = <mera.selenium_training.test_pytest_example_class.TestTitle instance at 0x0000000002E568C8>
+setup_module = None, setup = None, setup_function_url = None
+setup_function_title = None
+
+    def test_CheckTitle(self, setup_module, setup, setup_function_url, setup_function_title):
+        global url, title, page
+        actual_title = page.open_web_page(url)
+>       assert title == actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(title, actual_title)
+E       AssertionError: Title is incorrect. Expected 'Yandex', Actual 'Google'
+E       assert 'Yandex' == 'Google'
+E         - Yandex
+E         + Google
+
+test_pytest_example_class.py:93: AssertionError
+______ TestTitle.test_CheckTitle[Firefox-https://www.yandex.com/-Google] ______
+
+self = <mera.selenium_training.test_pytest_example_class.TestTitle instance at 0x00000000037E1408>
+setup_module = None, setup = None, setup_function_url = None
+setup_function_title = None
+
+    def test_CheckTitle(self, setup_module, setup, setup_function_url, setup_function_title):
+        global url, title, page
+        actual_title = page.open_web_page(url)
+>       assert title == actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(title, actual_title)
+E       AssertionError: Title is incorrect. Expected 'Google', Actual 'Yandex'
+E       assert 'Google' == 'Yandex'
+E         - Google
+E         + Yandex
+
+test_pytest_example_class.py:93: AssertionError
+_______ TestTitle.test_CheckTitle[Firefox-http://www.google.com-Yandex] _______
+
+self = <mera.selenium_training.test_pytest_example_class.TestTitle instance at 0x0000000002F0CC48>
+setup_module = None, setup = None, setup_function_url = None
+setup_function_title = None
+
+    def test_CheckTitle(self, setup_module, setup, setup_function_url, setup_function_title):
+        global url, title, page
+        actual_title = page.open_web_page(url)
+>       assert title == actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(title, actual_title)
+E       AssertionError: Title is incorrect. Expected 'Yandex', Actual 'Google'
+E       assert 'Yandex' == 'Google'
+E         - Yandex
+E         + Google
+
+test_pytest_example_class.py:93: AssertionError
+==================== 4 failed, 4 passed in 192.20 seconds =====================
+
+(selenium_training) C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training>

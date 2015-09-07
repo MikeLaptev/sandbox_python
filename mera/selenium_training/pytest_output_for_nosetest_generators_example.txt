@@ -1,0 +1,144 @@
+
+(selenium_training) C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training>py.test.exe -v -s nosetest_example_generators.py
+============================= test session starts =============================
+platform win32 -- Python 2.7.8 -- py-1.4.30 -- pytest-2.7.2 -- c:\users\mikhail\documents\development\virtual_environments\selenium_training\scripts\python.exe
+rootdir: C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training, inifile:
+collecting 0 itemsNoseTests set-up method for generators
+Start new browser instance
+NoseTests set-up module method for generators
+collecting 4 itemsNoseTests set-up method for generators
+collected 8 items
+
+nosetest_example_generators.py::testCheckTitleFunction::[0] NoseTests set-up method for generators
+NoseTests set-up method for generators
+PASSEDNoseTests tear-down method for generators
+
+nosetest_example_generators.py::testCheckTitleFunction::[1] NoseTests set-up method for generators
+Start new browser instance
+FAILEDNoseTests tear-down method for generators
+
+nosetest_example_generators.py::testCheckTitleFunction::[2] NoseTests set-up method for generators
+Start new browser instance
+FAILEDNoseTests tear-down method for generators
+
+nosetest_example_generators.py::testCheckTitleFunction::[3] NoseTests set-up method for generators
+Start new browser instance
+PASSEDNoseTests tear-down method for generators
+
+nosetest_example_generators.py::testCheckTitleClass::[0] NoseTests set-up method for generators
+Start new browser instance
+NoseTests set-up method for generators
+PASSEDNoseTests tear-down method for generators
+
+nosetest_example_generators.py::testCheckTitleClass::[1] NoseTests set-up method for generators
+Start new browser instance
+FAILEDNoseTests tear-down method for generators
+
+nosetest_example_generators.py::testCheckTitleClass::[2] NoseTests set-up method for generators
+Start new browser instance
+FAILEDNoseTests tear-down method for generators
+
+nosetest_example_generators.py::testCheckTitleClass::[3] NoseTests set-up method for generators
+Start new browser instance
+PASSEDNoseTests tear-down method for generators
+NoseTests tear-down module method for generators
+
+
+================================== FAILURES ===================================
+__________________________ testCheckTitleFunction[1] __________________________
+
+url = 'https://www.yandex.com/', expected_title = 'Google'
+
+    def check_title(url, expected_title):
+        global page
+        actual_title = page.open_web_page(url)
+>       eq_(expected_title, actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(expected_title, actual_title))
+
+nosetest_example_generators.py:55:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = 'Google', b = 'Yandex'
+msg = "Title is incorrect. Expected 'Google', Actual 'Yandex'"
+
+    def eq_(a, b, msg=None):
+        """Shorthand for 'assert a == b, "%r != %r" % (a, b)
+        """
+        if not a == b:
+>           raise AssertionError(msg or "%r != %r" % (a, b))
+E           AssertionError: Title is incorrect. Expected 'Google', Actual 'Yandex'
+
+..\..\..\virtual_environments\selenium_training\lib\site-packages\nose\tools\trivial.py:29: AssertionError
+__________________________ testCheckTitleFunction[2] __________________________
+
+url = 'http://www.google.com', expected_title = 'Yandex'
+
+    def check_title(url, expected_title):
+        global page
+        actual_title = page.open_web_page(url)
+>       eq_(expected_title, actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(expected_title, actual_title))
+
+nosetest_example_generators.py:55:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = 'Yandex', b = 'Google'
+msg = "Title is incorrect. Expected 'Yandex', Actual 'Google'"
+
+    def eq_(a, b, msg=None):
+        """Shorthand for 'assert a == b, "%r != %r" % (a, b)
+        """
+        if not a == b:
+>           raise AssertionError(msg or "%r != %r" % (a, b))
+E           AssertionError: Title is incorrect. Expected 'Yandex', Actual 'Google'
+
+..\..\..\virtual_environments\selenium_training\lib\site-packages\nose\tools\trivial.py:29: AssertionError
+___________________________ testCheckTitleClass[1] ____________________________
+
+self = <mera.selenium_training.nosetest_example_generators.CheckTitle instance at 0x00000000037987C8>
+url = 'https://www.yandex.com/', expected_title = 'Google'
+
+    def __call__(self, url, expected_title):
+        self.description = "Checking url: '{}' with title '{}'".format(url, expected_title)
+        actual_title = page.open_web_page(url)
+>       eq_(expected_title, actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(expected_title, actual_title))
+
+nosetest_example_generators.py:62:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = 'Google', b = 'Yandex'
+msg = "Title is incorrect. Expected 'Google', Actual 'Yandex'"
+
+    def eq_(a, b, msg=None):
+        """Shorthand for 'assert a == b, "%r != %r" % (a, b)
+        """
+        if not a == b:
+>           raise AssertionError(msg or "%r != %r" % (a, b))
+E           AssertionError: Title is incorrect. Expected 'Google', Actual 'Yandex'
+
+..\..\..\virtual_environments\selenium_training\lib\site-packages\nose\tools\trivial.py:29: AssertionError
+___________________________ testCheckTitleClass[2] ____________________________
+
+self = <mera.selenium_training.nosetest_example_generators.CheckTitle instance at 0x0000000003798888>
+url = 'http://www.google.com', expected_title = 'Yandex'
+
+    def __call__(self, url, expected_title):
+        self.description = "Checking url: '{}' with title '{}'".format(url, expected_title)
+        actual_title = page.open_web_page(url)
+>       eq_(expected_title, actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(expected_title, actual_title))
+
+nosetest_example_generators.py:62:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+a = 'Yandex', b = 'Google'
+msg = "Title is incorrect. Expected 'Yandex', Actual 'Google'"
+
+    def eq_(a, b, msg=None):
+        """Shorthand for 'assert a == b, "%r != %r" % (a, b)
+        """
+        if not a == b:
+>           raise AssertionError(msg or "%r != %r" % (a, b))
+E           AssertionError: Title is incorrect. Expected 'Yandex', Actual 'Google'
+
+..\..\..\virtual_environments\selenium_training\lib\site-packages\nose\tools\trivial.py:29: AssertionError
+==================== 4 failed, 4 passed in 188.00 seconds =====================
+
+(selenium_training) C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training>

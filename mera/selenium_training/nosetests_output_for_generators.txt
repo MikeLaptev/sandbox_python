@@ -1,0 +1,73 @@
+
+(selenium_training) C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training>nosetests nosetest_example_generators.py
+.FF..FF.
+======================================================================
+FAIL: mera.selenium_training.nosetest_example_generators.testCheckTitleFunction('https://www.yandex.com/', 'Google')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\users\mikhail\documents\development\virtual_environments\selenium_training\lib\site-packages\nose\case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training\nosetest_example_generators.py", line 55, in check_title
+    eq_(expected_title, actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(expected_title, actual_title))
+AssertionError: Title is incorrect. Expected 'Google', Actual 'Yandex'
+-------------------- >> begin captured logging << --------------------
+selenium.webdriver.remote.remote_connection: DEBUG: POST http://127.0.0.1:8485/hub/session/2bd3b05c-6d9e-46a5-b334-34e4e2c15923/url {"url": "https://www.yandex.com/", "sessionId": "2bd3b05c-6d9e-46a5-b334-34e4e2c15923"}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+selenium.webdriver.remote.remote_connection: DEBUG: GET http://127.0.0.1:8485/hub/session/2bd3b05c-6d9e-46a5-b334-34e4e2c15923/title {"sessionId": "2bd3b05c-6d9e-46a5-b334-34e4e2c15923"}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+FAIL: mera.selenium_training.nosetest_example_generators.testCheckTitleFunction('http://www.google.com', 'Yandex')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\users\mikhail\documents\development\virtual_environments\selenium_training\lib\site-packages\nose\case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training\nosetest_example_generators.py", line 55, in check_title
+    eq_(expected_title, actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(expected_title, actual_title))
+AssertionError: Title is incorrect. Expected 'Yandex', Actual 'Google'
+-------------------- >> begin captured logging << --------------------
+selenium.webdriver.remote.remote_connection: DEBUG: POST http://127.0.0.1:8485/hub/session/2bd3b05c-6d9e-46a5-b334-34e4e2c15923/url {"url": "http://www.google.com", "sessionId": "2bd3b05c-6d9e-46a5-b334-34e4e2c15923"}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+selenium.webdriver.remote.remote_connection: DEBUG: GET http://127.0.0.1:8485/hub/session/2bd3b05c-6d9e-46a5-b334-34e4e2c15923/title {"sessionId": "2bd3b05c-6d9e-46a5-b334-34e4e2c15923"}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+FAIL: Checking url: 'https://www.yandex.com/' with title 'Google'
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\users\mikhail\documents\development\virtual_environments\selenium_training\lib\site-packages\nose\case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training\nosetest_example_generators.py", line 62, in __call__
+    eq_(expected_title, actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(expected_title, actual_title))
+AssertionError: Title is incorrect. Expected 'Google', Actual 'Yandex'
+-------------------- >> begin captured logging << --------------------
+selenium.webdriver.remote.remote_connection: DEBUG: POST http://127.0.0.1:8524/hub/session/9ac2fdc7-ef2b-4154-9d03-590053cf4236/url {"url": "https://www.yandex.com/", "sessionId": "9ac2fdc7-ef2b-4154-9d03-590053cf4236"}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+selenium.webdriver.remote.remote_connection: DEBUG: GET http://127.0.0.1:8524/hub/session/9ac2fdc7-ef2b-4154-9d03-590053cf4236/title {"sessionId": "9ac2fdc7-ef2b-4154-9d03-590053cf4236"}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+FAIL: Checking url: 'http://www.google.com' with title 'Yandex'
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\users\mikhail\documents\development\virtual_environments\selenium_training\lib\site-packages\nose\case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training\nosetest_example_generators.py", line 62, in __call__
+    eq_(expected_title, actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(expected_title, actual_title))
+AssertionError: Title is incorrect. Expected 'Yandex', Actual 'Google'
+-------------------- >> begin captured logging << --------------------
+selenium.webdriver.remote.remote_connection: DEBUG: POST http://127.0.0.1:8524/hub/session/9ac2fdc7-ef2b-4154-9d03-590053cf4236/url {"url": "http://www.google.com", "sessionId": "9ac2fdc7-ef2b-4154-9d03-590053cf4236"}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+selenium.webdriver.remote.remote_connection: DEBUG: GET http://127.0.0.1:8524/hub/session/9ac2fdc7-ef2b-4154-9d03-590053cf4236/title {"sessionId": "9ac2fdc7-ef2b-4154-9d03-590053cf4236"}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+--------------------- >> end captured logging << ---------------------
+
+----------------------------------------------------------------------
+Ran 8 tests in 60.867s
+
+FAILED (failures=4)
+
+(selenium_training) C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training>

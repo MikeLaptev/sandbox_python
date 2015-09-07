@@ -1,0 +1,31 @@
+
+(selenium_training) C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training>nosetests unittest_example.py
+.F
+======================================================================
+FAIL: testIncorrectCheckTitle (mera.selenium_training.unittest_example.UnitTestExample)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training\unittest_example.py", line 39, in testIncorrectCheckTitle
+    self.assertEqual(yandex_title, actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(yandex_title, actual_title))
+AssertionError: Title is incorrect. Expected 'Yandex', Actual 'Google'
+-------------------- >> begin captured stdout << ---------------------
+Unittest set-up method
+Start new browser instance
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+selenium.webdriver.remote.remote_connection: DEBUG: GET http://127.0.0.1:8576/hub/session/6eb80d52-985c-4eb9-9d16-0c15549561c7/window_handles {"sessionId": "6eb80d52-985c-4eb9-9d16-0c15549561c7"}
+selenium.webdriver.remote.remote_connection: DEBUG: POST http://127.0.0.1:8601/hub/session {"desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "marionette": false, "javascriptEnabled": true}}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+selenium.webdriver.remote.remote_connection: DEBUG: POST http://127.0.0.1:8601/hub/session/56358216-32b2-451d-b9c5-9c732023b783/url {"url": "http://www.google.com", "sessionId": "56358216-32b2-451d-b9c5-9c732023b783"}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+selenium.webdriver.remote.remote_connection: DEBUG: GET http://127.0.0.1:8601/hub/session/56358216-32b2-451d-b9c5-9c732023b783/title {"sessionId": "56358216-32b2-451d-b9c5-9c732023b783"}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+--------------------- >> end captured logging << ---------------------
+
+----------------------------------------------------------------------
+Ran 2 tests in 44.355s
+
+FAILED (failures=1)
+
+(selenium_training) C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training>

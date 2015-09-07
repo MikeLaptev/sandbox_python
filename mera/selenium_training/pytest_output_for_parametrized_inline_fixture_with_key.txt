@@ -1,0 +1,117 @@
+
+(selenium_training) C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training>py.test.exe -v -k "Google or google" -s test_pytest_example_parametrized_inline_fixtures.py
+============================= test session starts =============================
+platform win32 -- Python 2.7.8 -- py-1.4.30 -- pytest-2.7.2 -- c:\users\mikhail\documents\development\virtual_environments\selenium_training\scripts\python.exe
+rootdir: C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training, inifile:
+collected 8 items
+
+test_pytest_example_parametrized_inline_fixtures.py::test_CheckTitle[ Google Chrome. - Url: 'https://www.yandex.com/'. - Title: 'Yandex'. ] Py.test set-up module method
+Py.test set-up method
+Py.test set-up method for url
+Py.test set-up method for title
+PASSEDPy.test tear-down method
+
+test_pytest_example_parametrized_inline_fixtures.py::test_CheckTitle[ Google Chrome. - Url: 'https://www.yandex.com/'. - Title: 'Google'. ] Py.test set-up method
+Start new browser instance
+Py.test set-up method for url
+Py.test set-up method for title
+FAILEDPy.test tear-down method
+
+test_pytest_example_parametrized_inline_fixtures.py::test_CheckTitle[ Google Chrome. - Url: 'http://www.google.com'. - Title: 'Yandex'. ] Py.test set-up method
+Start new browser instance
+Py.test set-up method for url
+Py.test set-up method for title
+FAILEDPy.test tear-down method
+
+test_pytest_example_parametrized_inline_fixtures.py::test_CheckTitle[ Google Chrome. - Url: 'http://www.google.com'. - Title: 'Google'. ] Py.test set-up method
+Start new browser instance
+Py.test set-up method for url
+Py.test set-up method for title
+PASSEDPy.test tear-down method
+
+test_pytest_example_parametrized_inline_fixtures.py::test_CheckTitle[ Mozilla FireFox. - Url: 'https://www.yandex.com/'. - Title: 'Google'. ] Py.test tear-down module method
+Py.test set-up module method
+Py.test set-up method
+Py.test set-up method for url
+Py.test set-up method for title
+FAILEDPy.test tear-down method
+
+test_pytest_example_parametrized_inline_fixtures.py::test_CheckTitle[ Mozilla FireFox. - Url: 'http://www.google.com'. - Title: 'Yandex'. ] Py.test set-up method
+Start new browser instance
+Py.test set-up method for url
+Py.test set-up method for title
+FAILEDPy.test tear-down method
+
+test_pytest_example_parametrized_inline_fixtures.py::test_CheckTitle[ Mozilla FireFox. - Url: 'http://www.google.com'. - Title: 'Google'. ] Py.test set-up method
+Start new browser instance
+Py.test set-up method for url
+Py.test set-up method for title
+PASSEDPy.test tear-down method
+Py.test tear-down module method
+
+
+================================== FAILURES ===================================
+ test_CheckTitle[ Google Chrome. - Url: 'https://www.yandex.com/'. - Title: 'Google'. ]
+
+setup_module = None, setup = None, setup_function_url = None
+setup_function_title = None
+
+    def test_CheckTitle(setup_module, setup, setup_function_url, setup_function_title):
+        global url, title, page
+        actual_title = page.open_web_page(url)
+>       assert title == actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(title, actual_title)
+E       AssertionError: Title is incorrect. Expected 'Google', Actual 'Yandex'
+E       assert 'Google' == 'Yandex'
+E         - Google
+E         + Yandex
+
+test_pytest_example_parametrized_inline_fixtures.py:91: AssertionError
+ test_CheckTitle[ Google Chrome. - Url: 'http://www.google.com'. - Title: 'Yandex'. ]
+
+setup_module = None, setup = None, setup_function_url = None
+setup_function_title = None
+
+    def test_CheckTitle(setup_module, setup, setup_function_url, setup_function_title):
+        global url, title, page
+        actual_title = page.open_web_page(url)
+>       assert title == actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(title, actual_title)
+E       AssertionError: Title is incorrect. Expected 'Yandex', Actual 'Google'
+E       assert 'Yandex' == 'Google'
+E         - Yandex
+E         + Google
+
+test_pytest_example_parametrized_inline_fixtures.py:91: AssertionError
+ test_CheckTitle[ Mozilla FireFox. - Url: 'https://www.yandex.com/'. - Title: 'Google'. ]
+
+setup_module = None, setup = None, setup_function_url = None
+setup_function_title = None
+
+    def test_CheckTitle(setup_module, setup, setup_function_url, setup_function_title):
+        global url, title, page
+        actual_title = page.open_web_page(url)
+>       assert title == actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(title, actual_title)
+E       AssertionError: Title is incorrect. Expected 'Google', Actual 'Yandex'
+E       assert 'Google' == 'Yandex'
+E         - Google
+E         + Yandex
+
+test_pytest_example_parametrized_inline_fixtures.py:91: AssertionError
+ test_CheckTitle[ Mozilla FireFox. - Url: 'http://www.google.com'. - Title: 'Yandex'. ]
+
+setup_module = None, setup = None, setup_function_url = None
+setup_function_title = None
+
+    def test_CheckTitle(setup_module, setup, setup_function_url, setup_function_title):
+        global url, title, page
+        actual_title = page.open_web_page(url)
+>       assert title == actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(title, actual_title)
+E       AssertionError: Title is incorrect. Expected 'Yandex', Actual 'Google'
+E       assert 'Yandex' == 'Google'
+E         - Yandex
+E         + Google
+
+test_pytest_example_parametrized_inline_fixtures.py:91: AssertionError
+================= 1 tests deselected by '-kGoogle or google' ==================
+============= 4 failed, 3 passed, 1 deselected in 196.44 seconds ==============
+
+(selenium_training) C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training>

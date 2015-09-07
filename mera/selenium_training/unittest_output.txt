@@ -1,0 +1,22 @@
+Unittest set-up class method
+Unittest set-up method
+testCorrectCheckTitle (__main__.UnitTestExample) ... Unittest tear-down method
+ok
+Unittest set-up method
+testIncorrectCheckTitle (__main__.UnitTestExample) ... Start new browser instance
+FAIL
+Unittest tear-down method
+Unittest tear-down class method
+
+======================================================================
+FAIL: testIncorrectCheckTitle (__main__.UnitTestExample)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training\unittest_example.py", line 39, in testIncorrectCheckTitle
+    self.assertEqual(yandex_title, actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(yandex_title, actual_title))
+AssertionError: Title is incorrect. Expected 'Yandex', Actual 'Google'
+
+----------------------------------------------------------------------
+Ran 2 tests in 43.165s
+
+FAILED (failures=1)

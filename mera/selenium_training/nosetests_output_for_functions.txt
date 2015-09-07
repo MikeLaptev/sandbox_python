@@ -1,0 +1,57 @@
+
+(selenium_training) C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training>nosetests nosetest_example_functions.py
+.F.F
+======================================================================
+FAIL: mera.selenium_training.nosetest_example_functions.testIncorrectCheckTitleYandex
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\users\mikhail\documents\development\virtual_environments\selenium_training\lib\site-packages\nose\case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training\nosetest_example_functions.py", line 68, in testIncorrectCheckTitleYandex
+    eq_(expected_title, actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(expected_title, actual_title))
+AssertionError: Title is incorrect. Expected 'Google', Actual 'Yandex'
+-------------------- >> begin captured stdout << ---------------------
+NoseTests set-up method for Yandex
+Start new browser instance
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+selenium.webdriver.remote.remote_connection: DEBUG: GET http://127.0.0.1:4942/hub/session/fd12bb1f-c490-40c2-9f4e-f1444eb649e7/window_handles {"sessionId": "fd12bb1f-c490-40c2-9f4e-f1444eb649e7"}
+selenium.webdriver.remote.remote_connection: DEBUG: POST http://127.0.0.1:4965/hub/session {"desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "marionette": false, "javascriptEnabled": true}}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+selenium.webdriver.remote.remote_connection: DEBUG: POST http://127.0.0.1:4965/hub/session/dd81a3db-cc04-488f-828a-d42f8fee658b/url {"url": "https://www.yandex.com/", "sessionId": "dd81a3db-cc04-488f-828a-d42f8fee658b"}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+selenium.webdriver.remote.remote_connection: DEBUG: GET http://127.0.0.1:4965/hub/session/dd81a3db-cc04-488f-828a-d42f8fee658b/title {"sessionId": "dd81a3db-cc04-488f-828a-d42f8fee658b"}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+--------------------- >> end captured logging << ---------------------
+
+======================================================================
+FAIL: mera.selenium_training.nosetest_example_functions.testIncorrectCheckTitleGoogle
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "c:\users\mikhail\documents\development\virtual_environments\selenium_training\lib\site-packages\nose\case.py", line 197, in runTest
+    self.test(*self.arg)
+  File "C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training\nosetest_example_functions.py", line 82, in testIncorrectCheckTitleGoogle
+    eq_(expected_title, actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(expected_title, actual_title))
+AssertionError: Title is incorrect. Expected 'Yandex', Actual 'Google'
+-------------------- >> begin captured stdout << ---------------------
+NoseTests set-up method for Google
+Start new browser instance
+
+--------------------- >> end captured stdout << ----------------------
+-------------------- >> begin captured logging << --------------------
+selenium.webdriver.remote.remote_connection: DEBUG: GET http://127.0.0.1:4988/hub/session/85fc3012-59c6-4f65-8eab-753d7c1ffee3/window_handles {"sessionId": "85fc3012-59c6-4f65-8eab-753d7c1ffee3"}
+selenium.webdriver.remote.remote_connection: DEBUG: POST http://127.0.0.1:5016/hub/session {"desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "marionette": false, "javascriptEnabled": true}}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+selenium.webdriver.remote.remote_connection: DEBUG: POST http://127.0.0.1:5016/hub/session/cd1d0c1e-2aca-4ad5-99b8-67e8e2796286/url {"url": "http://www.google.com", "sessionId": "cd1d0c1e-2aca-4ad5-99b8-67e8e2796286"}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+selenium.webdriver.remote.remote_connection: DEBUG: GET http://127.0.0.1:5016/hub/session/cd1d0c1e-2aca-4ad5-99b8-67e8e2796286/title {"sessionId": "cd1d0c1e-2aca-4ad5-99b8-67e8e2796286"}
+selenium.webdriver.remote.remote_connection: DEBUG: Finished Request
+--------------------- >> end captured logging << ---------------------
+
+----------------------------------------------------------------------
+Ran 4 tests in 109.779s
+
+FAILED (failures=2)
+
+(selenium_training) C:\Users\Mikhail\Documents\Development\sandbox_python\mera\selenium_training>
