@@ -20,8 +20,9 @@ def browser_type(request):
 
 
 @pytest.fixture(scope="module")
-def home_page_url(request):
+def yahoo_home_page_url(request):
     return request.config.getoption("--url")
+
 
 @pytest.fixture(scope="module")
 def proxy_settings(request):
