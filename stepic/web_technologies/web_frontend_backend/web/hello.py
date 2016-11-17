@@ -6,6 +6,6 @@ def wsgi_application(environ, start_response):
     headers = [('Content-Type', 'text/plain')]
     body = ['']
     if 'QUERY_STRING' in environ:
-        body = environ['QUERY_STRING'].split('&')
+        body = map(x+'\r\n' for x in environ['QUERY_STRING'].split('&'))
     start_response(status, headers)
     return body
