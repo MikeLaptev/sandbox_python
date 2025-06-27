@@ -1,4 +1,4 @@
-__author__ = 'Mikhail'
+__author__ = "Mikhail"
 
 
 def add_line(line_one, line_two):
@@ -89,42 +89,62 @@ def gauss_method(matrix, result_vector):
                 if matrix[another_modified_row_id][column_id] != 0:
                     # switch rows in the matrix
                     for matrix_column_id in range(column_id, len(matrix[0]), 1):
-                        matrix[forward_row_id][matrix_column_id], matrix[another_modified_row_id][matrix_column_id] = \
-                        matrix[another_modified_row_id][matrix_column_id], matrix[forward_row_id][matrix_column_id]
+                        (
+                            matrix[forward_row_id][matrix_column_id],
+                            matrix[another_modified_row_id][matrix_column_id],
+                        ) = (
+                            matrix[another_modified_row_id][matrix_column_id],
+                            matrix[forward_row_id][matrix_column_id],
+                        )
                     # switch elements in result vector
-                    result_vector[forward_row_id], result_vector[another_modified_row_id] = \
-                        result_vector[another_modified_row_id], result_vector[forward_row_id]
+                    (
+                        result_vector[forward_row_id],
+                        result_vector[another_modified_row_id],
+                    ) = (
+                        result_vector[another_modified_row_id],
+                        result_vector[forward_row_id],
+                    )
                     rows_were_switched = True
                     break
             if not rows_were_switched:
                 continue
         normalization_value = matrix[forward_row_id][column_id]
         # change value on the element on diagonal
-        multiply_by_value(matrix[forward_row_id], 1.0/normalization_value)
-        result_vector[forward_row_id] *= 1.0/normalization_value
+        multiply_by_value(matrix[forward_row_id], 1.0 / normalization_value)
+        result_vector[forward_row_id] *= 1.0 / normalization_value
         # modification
         for modified_row_id in range(forward_row_id + 1, the_matrix_size):
             if matrix[modified_row_id][column_id] != 0:
-                direct_or_reverse_gauss_step(column_id, forward_row_id, matrix, modified_row_id, result_vector)
+                direct_or_reverse_gauss_step(
+                    column_id, forward_row_id, matrix, modified_row_id, result_vector
+                )
     # reverse
     for reverse_row_id in range(the_smallest_matrix_size - 1, -1, -1):
         column_id = reverse_row_id
         if matrix[reverse_row_id][column_id] != 0:
             normalization_value = matrix[reverse_row_id][column_id]
             # change value on the element on diagonal
-            multiply_by_value(matrix[reverse_row_id], 1.0/normalization_value)
-            result_vector[reverse_row_id] *= 1.0/normalization_value
+            multiply_by_value(matrix[reverse_row_id], 1.0 / normalization_value)
+            result_vector[reverse_row_id] *= 1.0 / normalization_value
             # modification
             for modified_row_id in range(reverse_row_id - 1, -1, -1):
                 if matrix[modified_row_id][column_id] != 0:
-                    direct_or_reverse_gauss_step(column_id, reverse_row_id, matrix, modified_row_id, result_vector)
+                    direct_or_reverse_gauss_step(
+                        column_id,
+                        reverse_row_id,
+                        matrix,
+                        modified_row_id,
+                        result_vector,
+                    )
 
 
-def direct_or_reverse_gauss_step(column_id, forward_row_id, matrix, modified_row_id, result_vector):
-    """
-
-    """
-    modification = -(matrix[forward_row_id][column_id]) / (matrix[modified_row_id][column_id])
+def direct_or_reverse_gauss_step(
+    column_id, forward_row_id, matrix, modified_row_id, result_vector
+):
+    """ """
+    modification = -(matrix[forward_row_id][column_id]) / (
+        matrix[modified_row_id][column_id]
+    )
     # normalise matrix row
     multiply_by_value(matrix[modified_row_id], modification)
     # normalise result vector
@@ -157,7 +177,10 @@ def analyse_gauss_method_results(matrix, result_vector):
     """
     # check on situation when the system has no answer
     for row_id, row in enumerate(matrix):
-        if all([abs(row_element) < 1.0e-8 for row_element in matrix[row_id]]) and abs(result_vector[row_id]) > 1.0e-8:
+        if (
+            all([abs(row_element) < 1.0e-8 for row_element in matrix[row_id]])
+            and abs(result_vector[row_id]) > 1.0e-8
+        ):
             print("NO")
             return
     # system has infinite number of answers
@@ -166,17 +189,18 @@ def analyse_gauss_method_results(matrix, result_vector):
         return
     # system has only one answer
     print("YES")
-    print(" ".join([str(res) for res in result_vector]))
+    print((" ".join([str(res) for res in result_vector])))
+
 
 if __name__ == "__main__":
     # data initialization
-    data = list(map(lambda x: int(x), input().split()))
+    data = list([int(x) for x in input().split()])
     amount_of_equations = data[0]
     amount_of_variables = data[1]
     initial_matrix = list()
     initial_vector = list()
     for equation_id in range(amount_of_equations):
-        equation = list(map(lambda x: float(x), input().split()))
+        equation = list([float(x) for x in input().split()])
         initial_matrix.append(equation[:-1])
         initial_vector.append(equation[-1])
 

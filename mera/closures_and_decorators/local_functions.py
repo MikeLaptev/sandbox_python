@@ -1,9 +1,11 @@
-'''
+"""
 Created on Aug, 5 2015.
 
 @author: mlaptev
-'''
+"""
+
 import string
+
 
 def local_function_example(list_of_initials):
     """
@@ -21,34 +23,38 @@ def local_function_example(list_of_initials):
     L, O
     K, P
     """
-    
+
     def sort_by_second_name(list_of_initials_to_sort):
         return sorted(list_of_initials_to_sort)
-    
+
     def sort_by_first_name(list_of_initials_to_sort):
         list_of_second_and_first_names = []
         # change the order
         for initials in list_of_initials_to_sort:
-            list_of_second_and_first_names.append(", ".join(string.split(initials, ", ")[::-1]))
+            list_of_second_and_first_names.append(
+                ", ".join(string.split(initials, ", ")[::-1])
+            )
         # sorting
-        list_of_second_and_first_names.sort()    
+        list_of_second_and_first_names.sort()
         # change the order back
         sorted_list = []
         for initials in list_of_second_and_first_names:
             sorted_list.append(", ".join(string.split(initials, ", ")[::-1]))
-        
+
         return sorted_list
-    
-    print "<<< By Second name >>>"
+
+    print("<<< By Second name >>>")
     sorted_list_of_initials_by_second_name = sort_by_second_name(list_of_initials)
     for initials in sorted_list_of_initials_by_second_name:
-        print initials
-        
-    print "<<< By First name >>>"
+        print(initials)
+
+    print("<<< By First name >>>")
     sorted_list_of_initials_by_first_name = sort_by_first_name(list_of_initials)
     for initials in sorted_list_of_initials_by_first_name:
-        print initials
+        print(initials)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import doctest
-    print doctest.testmod()
+
+    print((doctest.testmod()))

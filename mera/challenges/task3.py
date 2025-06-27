@@ -1,8 +1,9 @@
-'''
+"""
 Created on Jul 30, 2015
 
 @author: Mikhail
-'''
+"""
+
 
 def check_that_number_happy(num):
     """
@@ -20,11 +21,13 @@ def check_that_number_happy(num):
             amount_of_one += 1
         num >>= 1
 
-    print "Amount of zero - {}".format(amount_of_zero)
-    print "Amount of one - {}".format(amount_of_one)
-    
+    print(("Amount of zero - {}".format(amount_of_zero)))
+    print(("Amount of one - {}".format(amount_of_one)))
+
     return amount_of_one == amount_of_zero
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     import doctest
-    print(doctest.testmod())
+
+    print((doctest.testmod()))

@@ -2,7 +2,7 @@
 from stepic.discrete_math.graphs.stack import Stack
 from stepic.discrete_math.graphs.graph_with_adjacency_list import Graph
 
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 # Найти количество компонент связности неориентированного графа при помощи поиска в глубину.
 #
@@ -35,19 +35,22 @@ def calculate_connected_components(graph):
             current_vertex = stack.pop()
             if current_vertex in all_vertexes:
                 all_vertexes.remove(current_vertex)
-            for adjacent_vertex in graph.adjacency_list_of_names_for_vertex(current_vertex):
+            for adjacent_vertex in graph.adjacency_list_of_names_for_vertex(
+                current_vertex
+            ):
                 if adjacent_vertex in all_vertexes:
                     stack.push(adjacent_vertex)
         number_of_connected_components += 1
     return number_of_connected_components
 
+
 if __name__ == "__main__":
     # data initialization
-    v, e = map(lambda x: int(x), input().split())
+    v, e = [int(x) for x in input().split()]
     edges = list()
     for _ in range(e):
-        edges.append(map(lambda x: int(x), input().split()))
-    graph = Graph(range(1, v + 1))
+        edges.append([int(x) for x in input().split()])
+    graph = Graph(list(range(1, v + 1)))
     for edge in edges:
         graph.add_edge(edge[0], edge[1])
-    print(calculate_connected_components(graph))
+    print((calculate_connected_components(graph)))

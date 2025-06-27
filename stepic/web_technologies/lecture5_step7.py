@@ -5,13 +5,14 @@ import _thread
 def handle(c, a):
     while True:
         data = c.recv(1024)
-        if data == 'close':
+        if data == "close":
             c.close()
             break
         c.send(data)
 
+
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server.bind(('0.0.0.0', 2222))
+server.bind(("0.0.0.0", 2222))
 server.listen(10)
 
 while True:

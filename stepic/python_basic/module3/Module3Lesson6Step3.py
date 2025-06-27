@@ -3,7 +3,7 @@ import requests
 from urllib.parse import urljoin
 
 
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 base_url = "https://stepic.org/media/attachments/course67/3.6.3/"
 
@@ -22,7 +22,8 @@ def get_content_of_latest_file(file_url):
     while not r.text.startswith("We"):
         index += 1
         r = requests.get(urljoin(base_url, r.text))
-    print(r.text)
+    print((r.text))
+
 
 if __name__ == "__main__":
     with open("dataset_3378_3.txt") as file_with_url:

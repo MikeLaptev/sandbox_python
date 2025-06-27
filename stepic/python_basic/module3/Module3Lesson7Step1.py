@@ -1,5 +1,5 @@
 # coding=utf-8
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 winner_score = 3
 tie_score = 1
@@ -21,7 +21,11 @@ class TeamStatistic(object):
 
     @property
     def amout_of_points(self):
-        return self.wins*winner_score + self.draws*tie_score + self.losses*loser_score
+        return (
+            self.wins * winner_score
+            + self.draws * tie_score
+            + self.losses * loser_score
+        )
 
     @property
     def amount_of_games(self):
@@ -52,19 +56,23 @@ class TeamStatistic(object):
         self.__amount_of_games += 1
 
     def __str__(self):
-        return "{}: {} {} {} {} {}".format(self.name,
-                                           self.amount_of_games,
-                                           self.wins,
-                                           self.draws,
-                                           self.losses,
-                                           self.amout_of_points)
+        return "{}: {} {} {} {} {}".format(
+            self.name,
+            self.amount_of_games,
+            self.wins,
+            self.draws,
+            self.losses,
+            self.amout_of_points,
+        )
 
 
 if __name__ == "__main__":
-    amount_of_matches = int(input())
+    amount_of_matches = int(eval(input()))
     full_statistic = dict()
     for _ in range(amount_of_matches):
-        first_team, first_team_score, second_team, second_team_score = input().split(sep=';')
+        first_team, first_team_score, second_team, second_team_score = input().split(
+            sep=";"
+        )
         if first_team not in full_statistic:
             full_statistic[first_team] = TeamStatistic(first_team)
         if second_team not in full_statistic:
@@ -78,5 +86,5 @@ if __name__ == "__main__":
         else:
             full_statistic[first_team].add_losses()
             full_statistic[second_team].add_win()
-    for name, team_statistic in full_statistic.items():
+    for name, team_statistic in list(full_statistic.items()):
         print(team_statistic)

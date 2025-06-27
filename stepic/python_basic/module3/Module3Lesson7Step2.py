@@ -1,5 +1,5 @@
 # coding=utf-8
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 if __name__ == "__main__":
     initial_alphabet = input()
@@ -15,9 +15,9 @@ if __name__ == "__main__":
         return_code[encrypted_alphabet[i]] = initial_alphabet[i]
 
     for to_encrypt_symbol in to_encrypt:
-        print(direct_code[to_encrypt_symbol], end='')
+        print(direct_code[to_encrypt_symbol], end="")
 
     print()
 
     for to_decrypt_symbol in to_decrypt:
-        print(return_code[to_decrypt_symbol], end='')
+        print(return_code[to_decrypt_symbol], end="")

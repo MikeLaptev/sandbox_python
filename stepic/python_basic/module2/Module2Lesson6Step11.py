@@ -1,8 +1,8 @@
 # coding=utf-8
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 if __name__ == "__main__":
-    amount = int(input())
+    amount = int(eval(input()))
     all_numbers = [i for i in range(1, amount**2 + 1)]
     spiral = [[-1 for _ in range(amount)] for _ in range(amount)]
     vertical_min, vertical_max, vertical_direction, vertical_position = -1, amount, 0, 0
@@ -48,4 +48,4 @@ if __name__ == "__main__":
         horizon_position += horizon_direction
         vertical_position += vertical_direction
     for line in spiral:
-        print(" ".join([str(i) for i in line]))
+        print((" ".join([str(i) for i in line])))

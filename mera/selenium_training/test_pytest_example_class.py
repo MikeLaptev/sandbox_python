@@ -3,12 +3,13 @@ Created on Aug 30, 2015
 
 @author: Mikhail
 """
+
 import pytest
 import re
 
 from .home_page_functionality import HomePage
 
-__author__ = 'Mikhail'
+__author__ = "Mikhail"
 
 yandex_title = "Yandex"
 yandex_url = "https://www.yandex.com/"
@@ -34,66 +35,77 @@ class TestTitle:
             return None
 
     # This method will be called before execution of tests from the class
-    @pytest.fixture(scope="module",
-                    params=['Chrome', 'Firefox'],
-                    ids=id_fixture_module)
+    @pytest.fixture(scope="module", params=["Chrome", "Firefox"], ids=id_fixture_module)
     def setup_module(self, request):
         global current_browser
-        print "Py.test set-up module method"
+        print("Py.test set-up module method")
         page.start_browser(request.param)
         current_browser = request.param
 
         # This method will be called after execution of tests from the class
         def fin():
             global page
-            print "Py.test tear-down module method"
+            print("Py.test tear-down module method")
             page.stop_browser()
+
         request.addfinalizer(fin)
 
     # This method will be called before tests execution
     @pytest.fixture(scope="function")
     def setup(self, request):
         global page, current_browser
-        print "Py.test set-up method"
+        print("Py.test set-up method")
         if page.number_of_opened_windows() == 0:
-            print "Start new browser instance"
-            page.start_browser(current_browser if current_browser is not None else 'Firefox')
+            print("Start new browser instance")
+            page.start_browser(
+                current_browser if current_browser is not None else "Firefox"
+            )
 
         # This method will be called after execution of each test
         def fin():
             global page
-            print "Py.test tear-down method"
+            print("Py.test tear-down method")
             page.close_browser_window()
+
         request.addfinalizer(fin)
-        
+
     # This function returns id for fixture value (url)
     def id_fixture_function_url_value(self, fixture_value):
         return " Url: '{}'. ".format(fixture_value)
 
-    @pytest.fixture(scope="function",
-                    params=[yandex_url, google_url],
-                    ids=id_fixture_function_url_value)
+    @pytest.fixture(
+        scope="function",
+        params=[yandex_url, google_url],
+        ids=id_fixture_function_url_value,
+    )
     def setup_function_url(self, request):
         global url
-        print "Py.test set-up method for url"
+        print("Py.test set-up method for url")
         url = request.param
 
     # This function returns id for fixture value (title)
     def id_fixture_function_title_value(self, fixture_value):
         return " Title: '{}'. ".format(fixture_value)
 
-    @pytest.fixture(scope="function",
-                    params = [yandex_title, google_title],
-                    ids = id_fixture_function_title_value)
+    @pytest.fixture(
+        scope="function",
+        params=[yandex_title, google_title],
+        ids=id_fixture_function_title_value,
+    )
     def setup_function_title(self, request):
         global title, page
-        print "Py.test set-up method for title"
+        print("Py.test set-up method for title")
         title = request.param
 
-    def test_CheckTitle(self, setup_module, setup, setup_function_url, setup_function_title):
+    def test_CheckTitle(
+        self, setup_module, setup, setup_function_url, setup_function_title
+    ):
         global url, title, page
         actual_title = page.open_web_page(url)
-        assert title == actual_title, "Title is incorrect. Expected '{}', Actual '{}'".format(title, actual_title)
+        assert (
+            title == actual_title
+        ), "Title is incorrect. Expected '{}', Actual '{}'".format(title, actual_title)
+
 
 if __name__ == "__main__":
-    pytest.main(args=['-v', '-s'])
+    pytest.main(args=["-v", "-s"])

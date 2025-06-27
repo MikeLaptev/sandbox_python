@@ -8,7 +8,7 @@ from selenium import webdriver
 from time import sleep
 import re
 
-__author__ = 'Mikhail'
+__author__ = "Mikhail"
 
 
 class HomePage:
@@ -17,7 +17,7 @@ class HomePage:
         self.page_url = None
         self.driver = None
 
-    def start_browser(self, browser_type='Firefox'):
+    def start_browser(self, browser_type="Firefox"):
         if re.match("firefox", browser_type, re.I):
             self.driver = webdriver.Firefox()
         elif re.match("chrome", browser_type, re.I):
@@ -38,11 +38,11 @@ class HomePage:
 
     def close_browser_window(self):
         self.driver.close()
-        # Additional sleep for 5 seconds to make sure 
+        # Additional sleep for 5 seconds to make sure
         # that browser window has been closed properly.
-        # If we remove that timeout, then call of function start_browser 
+        # If we remove that timeout, then call of function start_browser
         # after close_browser_window may do nothing, since instance exists
-        # but closing 
+        # but closing
         sleep(3)
 
     def stop_browser(self):

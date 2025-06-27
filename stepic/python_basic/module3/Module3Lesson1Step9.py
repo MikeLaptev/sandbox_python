@@ -1,5 +1,5 @@
 # coding=utf-8
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 
 def modify_list(l):
@@ -22,6 +22,8 @@ def modify_list(l):
         else:
             del l[i]
 
+
 if __name__ == "__main__":
     import doctest
-    print(doctest.testmod())
+
+    print((doctest.testmod()))

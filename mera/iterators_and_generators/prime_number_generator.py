@@ -1,10 +1,11 @@
-'''
+"""
 Created on Aug 11, 2015
 
 @author: mlaptev
-'''
+"""
 
 import math
+
 
 def prime_numbers_generation():
     prime_numbers = dict()
@@ -14,7 +15,11 @@ def prime_numbers_generation():
     first_odd_number = 3
     while True:
         is_prime = True
-        number_to_check = (number_to_check + number_to_check%2 + 1) if index > 1 else first_prime_number
+        number_to_check = (
+            (number_to_check + number_to_check % 2 + 1)
+            if index > 1
+            else first_prime_number
+        )
         divisor = first_odd_number
         divisor_index = 2
         while divisor <= math.sqrt(number_to_check):
@@ -23,15 +28,16 @@ def prime_numbers_generation():
                 break
             divisor_index += 1
             divisor = prime_numbers[divisor_index]
-        if is_prime == True:
+        if is_prime:
             # if found just add it to the list
             prime_numbers[index] = number_to_check
             yield number_to_check
             # increase value of the index
             index += 1
 
+
 if __name__ == "__main__":
     for i in prime_numbers_generation():
-        print i
+        print(i)
         if i > 200:
             break

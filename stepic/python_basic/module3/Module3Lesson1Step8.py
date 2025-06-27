@@ -1,5 +1,5 @@
 # coding=utf-8
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 
 def f(x):
@@ -12,11 +12,13 @@ def f(x):
     -0.5
     """
     if x <= -2:
-        return 1 - (x + 2)**2
+        return 1 - (x + 2) ** 2
     if x > 2:
-        return 1 + (x - 2)**2
-    return -x/2
+        return 1 + (x - 2) ** 2
+    return -x / 2
+
 
 if __name__ == "__main__":
     import doctest
-    print(doctest.testmod())
+
+    print((doctest.testmod()))

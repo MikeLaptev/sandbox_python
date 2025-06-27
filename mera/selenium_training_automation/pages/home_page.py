@@ -3,6 +3,7 @@ Created on Sep 14, 2015
 
 @author: Mikhail
 """
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.expected_conditions import *
@@ -10,7 +11,7 @@ from selenium.webdriver.support.expected_conditions import *
 # Project's imports
 from mera.selenium_training_automation.pages.page import Page
 
-__author__ = 'Mikhail'
+__author__ = "Mikhail"
 
 
 class HomePage(Page):
@@ -32,7 +33,11 @@ class HomePage(Page):
 
     def go_to_registration_page(self):
         # put mouse cursor on it
-        webdriver.ActionChains(self.driver).move_to_element(self.sign_in_field).perform()
+        webdriver.ActionChains(self.driver).move_to_element(
+            self.sign_in_field
+        ).perform()
         # wait until pop-up appear
-        sign_up_element = self.wait.until(visibility_of_element_located((By.CSS_SELECTOR, self.sign_up_css_selector)))
+        sign_up_element = self.wait.until(
+            visibility_of_element_located((By.CSS_SELECTOR, self.sign_up_css_selector))
+        )
         sign_up_element.click()

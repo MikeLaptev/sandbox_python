@@ -1,5 +1,5 @@
 # coding=utf-8
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 north_command = "north"
 south_command = "south"
@@ -7,7 +7,7 @@ west_command = "west"
 east_command = "east"
 
 if __name__ == "__main__":
-    amount_of_commands = int(input())
+    amount_of_commands = int(eval(input()))
     x, y = 0, 0
     for _ in range(amount_of_commands):
         command, distance = input().split()
@@ -20,4 +20,4 @@ if __name__ == "__main__":
             x -= distance
         elif command == east_command:
             x += distance
-    print("{} {}".format(x, y))
+    print(("{} {}".format(x, y)))

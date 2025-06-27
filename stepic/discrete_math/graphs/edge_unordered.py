@@ -1,6 +1,6 @@
 from stepic.discrete_math.graphs.vertex_with_adjacency_list import Vertex
 
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 
 class Edge(object):

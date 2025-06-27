@@ -9,7 +9,7 @@ from mera.selenium_training_automation.pages.home_page import HomePage
 from mera.selenium_training_automation.pages.registration_page import RegistrationPage
 from mera.selenium_training_automation.pages.verification_page import VerificationPage
 
-__author__ = 'Mikhail'
+__author__ = "Mikhail"
 
 
 class Application(object):
@@ -30,7 +30,3 @@ class Application(object):
 
     def get_title(self):
         return self.driver.title
-
-
-
-

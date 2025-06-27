@@ -1,4 +1,4 @@
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 
 def generate_value_luke(till):
@@ -17,4 +17,4 @@ def generate_value_luke(till):
 if __name__ == "__main__":
     # Simple launch
     for position, value in enumerate(generate_value_luke(51)):
-        print(position, value)
+        print((position, value))

@@ -1,15 +1,16 @@
 # coding=utf-8
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 
 def f(x):
-    return 'Fake'
+    return "Fake"
+
 
 if __name__ == "__main__":
-    amount_of_tests = int(input())
+    amount_of_tests = int(eval(input()))
     cached_results = dict()
     for test_id in range(amount_of_tests):
-        parameter = int(input())
+        parameter = int(eval(input()))
         if parameter not in cached_results:
             cached_results[parameter] = f(parameter)
-        print(cached_results[parameter])
+        print((cached_results[parameter]))

@@ -4,22 +4,24 @@ Created on Sep 14, 2015
 @author: Mikhail
 """
 
-__author__ = 'Mikhail'
+__author__ = "Mikhail"
 
 
 class NewMailBoxSettings(object):
 
-    def __init__(self,
-                 firstname="Mike",
-                 secondname="Laptev",
-                 password="OneTwoThree",
-                 email_id="mikhail.laptev",
-                 mobile_number="1234567890",
-                 country_code_value="1",
-                 day="9",
-                 month="September",
-                 year="1999",
-                 male=True):
+    def __init__(
+        self,
+        firstname="Mike",
+        secondname="Laptev",
+        password="OneTwoThree",
+        email_id="mikhail.laptev",
+        mobile_number="1234567890",
+        country_code_value="1",
+        day="9",
+        month="September",
+        year="1999",
+        male=True,
+    ):
         self.user_firstname = firstname
         self.user_secondname = secondname
         self.user_password = password

@@ -1,18 +1,18 @@
 # coding=utf-8
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 if __name__ == "__main__":
     # process first number
-    first_number = int(input())
+    first_number = int(eval(input()))
     maximum, middle, minimum = first_number, first_number, first_number
     # process second number
-    second_number = int(input())
+    second_number = int(eval(input()))
     if second_number >= maximum:
         maximum = second_number
     else:
         minimum = second_number
     # process third number
-    third_number = int(input())
+    third_number = int(eval(input()))
     if third_number >= maximum:
         maximum, middle = third_number, maximum
     elif third_number >= minimum:

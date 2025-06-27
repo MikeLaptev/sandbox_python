@@ -1,4 +1,4 @@
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 
 class Queue(object):

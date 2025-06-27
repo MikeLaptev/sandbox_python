@@ -1,11 +1,13 @@
-'''
+"""
 Created on Jul 29, 2015
 
 @author: Mikhail
-'''
+"""
+
 import unittest
 import os
-from json_file_generator import MyOwnJSONProcessing as json_processing
+from .json_file_generator import MyOwnJSONProcessing as json_processing
+
 
 class GenerateAndLoadJSONTestInitial(unittest.TestCase):
 
@@ -19,12 +21,30 @@ class GenerateAndLoadJSONTestInitial(unittest.TestCase):
         expected_data = json_processing.generate_data_for_json_obj()
         json_processing.generate_json_file_with_data(file_name, expected_data)
         actual_data = json_processing.load_data_from_json_file(file_name)
-        for exp_key, exp_value in expected_data.items():
-            self.assertTrue(actual_data.has_key(exp_key), "Expected key '{}' has not been found in loaded json".format(exp_key))
-            self.assertEquals(exp_value, actual_data.get(exp_key), "Dictionaries have different values '{}' for first and '{}' for second for the same key".format(exp_value, actual_data.get(exp_key)))
-        for act_key, act_value in actual_data.items():
-            self.assertTrue(expected_data.has_key(act_key), "Loaded key '{}' has not been found in dumped json".format(act_key))
-            self.assertEquals(act_value, expected_data.get(act_key), "Dictionaries have different values '{}' for first and '{}' for second for the same key".format(act_value, expected_data.get(act_key)))
+        for exp_key, exp_value in list(expected_data.items()):
+            self.assertTrue(
+                exp_key in actual_data,
+                "Expected key '{}' has not been found in loaded json".format(exp_key),
+            )
+            self.assertEqual(
+                exp_value,
+                actual_data.get(exp_key),
+                "Dictionaries have different values '{}' for first and '{}' for second for the same key".format(
+                    exp_value, actual_data.get(exp_key)
+                ),
+            )
+        for act_key, act_value in list(actual_data.items()):
+            self.assertTrue(
+                act_key in expected_data,
+                "Loaded key '{}' has not been found in dumped json".format(act_key),
+            )
+            self.assertEqual(
+                act_value,
+                expected_data.get(act_key),
+                "Dictionaries have different values '{}' for first and '{}' for second for the same key".format(
+                    act_value, expected_data.get(act_key)
+                ),
+            )
         # Second execution of the test can be failed because if we do not delete created file
         os.remove(file_name)
 

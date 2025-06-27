@@ -1,5 +1,5 @@
 # coding=utf-8
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 if __name__ == "__main__":
     amount, i, number = int(input()), 0, 0
@@ -8,5 +8,5 @@ if __name__ == "__main__":
             if i >= amount:
                 break
             i += 1
-            print(number, end=' ')
+            print(number, end=" ")
         number += 1

@@ -1,8 +1,9 @@
-'''
+"""
 Created on Aug, 5 2015.
 
 @author: mlaptev
-'''
+"""
+
 
 def power_of_n(N):
     """
@@ -13,10 +14,14 @@ def power_of_n(N):
     >>> cube(4)
     64
     """
+
     def action(X):
         return X**N
+
     return action
+
 
 if __name__ == "__main__":
     import doctest
-    print doctest.testmod()
+
+    print((doctest.testmod()))

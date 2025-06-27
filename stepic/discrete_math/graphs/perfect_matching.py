@@ -1,4 +1,4 @@
-__author__ = 'Mikhail'
+__author__ = "Mikhail"
 
 
 """
@@ -13,8 +13,8 @@ def full_graph_with_2_n_vertexes(n):
     654729075L
     """
     result = 1
-    for i in range(1, n+1):
-        result *= (i*(2*i-1))
-    for i in range(1, n+1):
+    for i in range(1, n + 1):
+        result *= i * (2 * i - 1)
+    for i in range(1, n + 1):
         result /= i
     return result

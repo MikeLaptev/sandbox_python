@@ -3,11 +3,15 @@ Created on Sep 14, 2015
 
 @author: Mikhail
 """
+
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support.expected_conditions import visibility_of_element_located, visibility_of
+from selenium.webdriver.support.expected_conditions import (
+    visibility_of_element_located,
+    visibility_of,
+)
 from selenium.common.exceptions import TimeoutException
 
-__author__ = 'Mikhail'
+__author__ = "Mikhail"
 
 
 class Page(object):

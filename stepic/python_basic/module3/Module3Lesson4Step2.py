@@ -1,5 +1,5 @@
 # coding=utf-8
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 
 def unpack_dataset(input_file_name, output_file_name):
@@ -21,6 +21,7 @@ def unpack_dataset(input_file_name, output_file_name):
                     amount += symbol
             for _ in range(int(amount)):
                 output_file.write(current_symbol)
+
 
 if __name__ == "__main__":
     unpack_dataset("dataset_3363_2.txt", "reply_3363_2.txt")

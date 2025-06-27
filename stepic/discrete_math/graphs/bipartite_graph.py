@@ -3,7 +3,7 @@ from stepic.discrete_math.graphs.stack import Stack
 from stepic.discrete_math.graphs.graph_with_adjacency_list import Graph
 
 
-__author__ = 'Mikhail'
+__author__ = "Mikhail"
 
 """
 Проверить является ли граф двудольным.
@@ -74,13 +74,14 @@ def is_graph_bipartite(graph):
                 return False
     return True
 
+
 if __name__ == "__main__":
     # data initialization
-    v, e = map(lambda x: int(x), input().split())
+    v, e = [int(x) for x in input().split()]
     edges = list()
     for _ in range(e):
-        edges.append(map(lambda x: int(x), input().split()))
-    graph = Graph(range(1, v + 1))
+        edges.append([int(x) for x in input().split()])
+    graph = Graph(list(range(1, v + 1)))
     for edge in edges:
         graph.add_edge(edge[0], edge[1])
-    print("YES" if is_graph_bipartite(graph) else "NO")
+    print(("YES" if is_graph_bipartite(graph) else "NO"))

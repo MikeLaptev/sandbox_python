@@ -3,14 +3,19 @@ Created on Sep 14, 2015
 
 @author: Mikhail
 """
+
 import pytest
 
-__author__ = 'Mikhail'
+__author__ = "Mikhail"
 
 
 def pytest_addoption(parser):
-    parser.addoption("--browser", action="store", default="firefox", help="Type of Web Browser")
-    parser.addoption("--url", action="store", default="https://www.yahoo.com/", help="Home page URL")
+    parser.addoption(
+        "--browser", action="store", default="firefox", help="Type of Web Browser"
+    )
+    parser.addoption(
+        "--url", action="store", default="https://www.yahoo.com/", help="Home page URL"
+    )
     parser.addoption("--proxy", action="store", default="No", help="Proxy Settings")
 
 

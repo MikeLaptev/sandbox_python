@@ -1,8 +1,8 @@
 # coding=utf-8
-__author__ = 'mlaptev'
+__author__ = "mlaptev"
 
 if __name__ == "__main__":
-    input_string = input()
+    input_string = eval(input())
     output_string = ""
     current_symbol = input_string[0]
     amount = 0
