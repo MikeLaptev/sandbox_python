@@ -16,8 +16,8 @@ class ReverseList:
         p = None
         c = head
 
-        while c.__next__ is not None:
-            t = c.__next__
+        while c.next is not None:
+            t = c.next
             c.next = p
             p = c
             c = t
