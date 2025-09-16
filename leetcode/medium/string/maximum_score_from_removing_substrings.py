@@ -18,8 +18,8 @@ class MaximumScoreFromRemovingSubstrings:
         >>> assert 16 == actual, f'expected 16; got {actual}'
         """
 
-        max_gain: str = 'ab' if x > y else 'ba'
-        min_gain: str = 'ab' if x <= y else 'ba'
+        max_gain: str = "ab" if x > y else "ba"
+        min_gain: str = "ab" if x <= y else "ba"
 
         count: int = 0
         q: str = s
@@ -33,11 +33,11 @@ class MaximumScoreFromRemovingSubstrings:
 
     def process(self, s: str, gain: str) -> Tuple[int, str]:
         count = 0
-        q = ''
+        q = ""
         for i, c in enumerate(s):
             q += c
             if q.endswith(gain):
-                q = q[:len(q) - len(gain)]
+                q = q[: len(q) - len(gain)]
                 count += 1
         return count, q
 
@@ -52,13 +52,13 @@ class MaximumScoreFromRemovingSubstrings:
         >>> assert 16 == actual, f'expected 16; got {actual}'
         """
         if x > y:
-            return self.process_opt(s, 'a', 'b', x, y)
+            return self.process_opt(s, "a", "b", x, y)
         else:
-            return self.process_opt(s, 'b', 'a', y, x)
+            return self.process_opt(s, "b", "a", y, x)
 
     def process_opt(self, s: str, a: str, b: str, x: int, y: int) -> int:
         c1 = c2 = ans = 0
-        s += 'c'
+        s += "c"
         for c in s:
             if c == a:
                 c1 += 1
@@ -74,7 +74,7 @@ class MaximumScoreFromRemovingSubstrings:
         return ans
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import doctest
 
     doctest.testmod()

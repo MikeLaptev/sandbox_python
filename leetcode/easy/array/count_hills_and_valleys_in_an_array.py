@@ -39,7 +39,6 @@ class CountHillsAndValleysInAnArray:
 
         return counter
 
-
     def find_next_non_equal(self, nums: List[int], s: int) -> int:
         for i in range(s, len(nums)):
             if nums[i] != nums[s]:
@@ -47,7 +46,7 @@ class CountHillsAndValleysInAnArray:
         return -1
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import doctest
 
     doctest.testmod()

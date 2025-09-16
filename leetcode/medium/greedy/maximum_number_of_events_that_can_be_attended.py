@@ -43,7 +43,6 @@ class MaximumNumberOfEventsThatCanBeAttended:
 
         return result
 
-
     def max_events_opt(self, events: List[List[int]]) -> int:
         """
         >>> sut = MaximumNumberOfEventsThatCanBeAttended()

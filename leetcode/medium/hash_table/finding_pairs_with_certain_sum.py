@@ -29,7 +29,7 @@ class FindSumPairs:
         return r
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # scenario 1
     find_sum_pairs = FindSumPairs([1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4])
     # return 8; pairs (2,2), (3,2), (4,2), (2,4), (3,4), (4,4) make 2 + 5 and pairs (5,1), (5,5) make 3 + 4

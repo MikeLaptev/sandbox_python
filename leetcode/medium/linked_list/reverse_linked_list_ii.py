@@ -8,7 +8,9 @@ class ReverseLinkedListII:
     Link: https://leetcode.com/problems/reverse-linked-list-ii/
     """
 
-    def reverse_between(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+    def reverse_between(
+        self, head: Optional[ListNode], left: int, right: int
+    ) -> Optional[ListNode]:
         """
         >>> sut = ReverseLinkedListII()
         >>> n1 = ListNode(1)

@@ -23,7 +23,7 @@ class ValidWord:
 
         for c in word:
             if c in string.ascii_letters:
-                if c.lower() in ['a', 'e', 'i', 'o', 'u']:
+                if c.lower() in ["a", "e", "i", "o", "u"]:
                     has_vowel = True
                 else:
                     has_consonant = True
@@ -33,7 +33,7 @@ class ValidWord:
         return has_vowel and has_consonant
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import doctest
 
     doctest.testmod()

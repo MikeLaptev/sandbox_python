@@ -7,12 +7,10 @@ class TrieNode:
         self.value: str = value
         self.next: Dict[str, TrieNode] = dict()
         self.is_folder = False
-        self.full_path = ''
-
+        self.full_path = ""
 
     def __repr__(self) -> str:
-        return f'\'{self.value}\' ({self.is_folder}; \'{self.full_path}\') -> {self.next.keys()}'
-
+        return f"'{self.value}' ({self.is_folder}; '{self.full_path}') -> {self.next.keys()}"
 
 
 class RemoveSubFoldersFromTheFilesystem:
@@ -34,9 +32,9 @@ class RemoveSubFoldersFromTheFilesystem:
         >>> expected = ['/a/b/c', '/a/b/ca', '/a/b/d']
         >>> assert sorted(actual) == sorted(expected), f'expected {sorted(expected)}; got {sorted(actual)}'
         """
-        root = TrieNode('')
+        root = TrieNode("")
         for folder in folders:
-            path: List[str] = folder[1:].split('/')
+            path: List[str] = folder[1:].split("/")
             r = root
             for i, p in enumerate(path):
                 if p not in r.next:
@@ -60,7 +58,6 @@ class RemoveSubFoldersFromTheFilesystem:
 
         return result
 
-
     def remove_subfolders_opt(self, folder: List[str]) -> List[str]:
         """
         >>> sut = RemoveSubFoldersFromTheFilesystem()
@@ -77,12 +74,12 @@ class RemoveSubFoldersFromTheFilesystem:
         folder.sort()
         res = []
         for path in folder:
-            if not res or not path.startswith(res[-1] + '/'):
+            if not res or not path.startswith(res[-1] + "/"):
                 res.append(path)
         return res
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
