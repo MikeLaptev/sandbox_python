@@ -1,0 +1,5 @@
+DEUCE = "Deuce"
+ALL = "All"
+WIN_FOR = "Win for"
+ADVANTAGE = "Advantage"
+LOVE = "Love"
