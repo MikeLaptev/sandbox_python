@@ -27,7 +27,6 @@ class AppleRedistributionIntoBoxes:
 
         return -1
 
-
     def minimum_boxes_opt(self, apple: List[int], capacity: List[int]) -> int:
         """
         >>> sut = AppleRedistributionIntoBoxes()
