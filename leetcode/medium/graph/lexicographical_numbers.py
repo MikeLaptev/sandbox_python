@@ -29,7 +29,7 @@ class LexicographicalNumbers:
     This way, we mimic the way we would manually write numbers in lexicographical order.
     We move from one number to the next by considering when to go deeper (appending digits) and
     when to backtrack (moving to the next root). Unlike the recursive method, which explores
-    each branch of the tree by diving deeper, this method keeps track of the current number and
+    each branch of the binary_tree by diving deeper, this method keeps track of the current number and
     directly adjusts it. This makes it more space-efficient, with essentially no extra space
     overhead, and runs in O(n) time.
     """

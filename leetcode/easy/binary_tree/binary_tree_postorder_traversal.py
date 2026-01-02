@@ -1,6 +1,6 @@
 from typing import Optional, List, Tuple
 
-from leetcode.easy.tree.tree_node import TreeNode
+from leetcode.easy.binary_tree.tree_node import TreeNode
 
 
 class BinaryTreePostorderTraversal:
