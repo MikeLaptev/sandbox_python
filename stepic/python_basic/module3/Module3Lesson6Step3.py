@@ -2,7 +2,6 @@
 import requests
 from urllib.parse import urljoin
 
-
 __author__ = "mlaptev"
 
 base_url = "https://stepic.org/media/attachments/course67/3.6.3/"

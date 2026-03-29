@@ -2,7 +2,6 @@
 from stepic.discrete_math.graphs.stack import Stack
 from stepic.discrete_math.graphs.graph_with_adjacency_list import Graph
 
-
 __author__ = "Mikhail"
 
 """

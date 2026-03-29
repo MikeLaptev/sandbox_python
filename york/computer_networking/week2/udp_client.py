@@ -1,6 +1,5 @@
 import socket
 
-
 if __name__ == "__main__":
     # Define the server address and port
     server_address = ("localhost", 12345)
